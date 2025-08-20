@@ -1,5 +1,5 @@
 <template>
-    <div>Welcome to Ziakit!</div>
+    <ZiaApp>Welcome to Ziakit!</ZiaApp>
 </template>
 
 <script setup lang="ts">
