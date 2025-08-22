@@ -6,7 +6,6 @@
 
 <style lang="css">
 .zia-app {
-    background-color: red;
     display: flex;
     flex-direction: column;
     height: 100vh;
