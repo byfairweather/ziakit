@@ -1,13 +1,14 @@
 {
     "name": "ziakit",
     "type": "module",
-    "private": true,
+    "version": "0.1.0",
+    "main": "core/nuxt.config.ts",
     "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev -o",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
+        "build": "nuxt build docs",
+        "dev": "nuxt dev -o docs",
+        "generate": "nuxt generate docs",
+        "preview": "nuxt preview docs",
+        "postinstall": "nuxt prepare docs"
     },
     "dependencies": {
         "@nuxt/eslint": "^1.9.0",
