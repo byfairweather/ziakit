@@ -7,5 +7,5 @@ export default defineNuxtConfig({
     compatibilityDate: "2025-07-15",
     devtools: { enabled: true },
     modules: ["@nuxt/eslint"],
-    css: [join(currentDir, "./app/assets/css/reset.css")],
+    css: [join(currentDir, "./app/assets/css/reset.css"), join(currentDir, "./app/assets/css/variables.css")],
 });

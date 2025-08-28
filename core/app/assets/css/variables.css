@@ -1,0 +1,70 @@
+:root {
+    --color-shade-1: white 83%;
+    --color-shade-2: white 70%;
+    --color-shade-3: white 50%;
+    --color-shade-4: white 25%;
+    --color-shade-5: white 0%;
+    --color-shade-6: black 20%;
+    --color-shade-7: black 40%;
+    --color-shade-8: black 60%;
+    --color-shade-9: black 75%;
+
+    --color-interpolation-method: in srgb;
+
+    --color-neutral-white: white;
+    --color-neutral-black: black;
+    --color-neutral-base: #7f7f7f;
+    --color-neutral-1: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-1));
+    --color-neutral-2: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-2));
+    --color-neutral-3: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-3));
+    --color-neutral-4: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-4));
+    --color-neutral-5: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-5));
+    --color-neutral-6: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-6));
+    --color-neutral-7: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-7));
+    --color-neutral-8: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-8));
+    --color-neutral-9: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-9));
+
+    --color-primary-base: #00addd;
+    --color-primary-1: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-1));
+    --color-primary-2: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-2));
+    --color-primary-3: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-3));
+    --color-primary-4: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-4));
+    --color-primary-5: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-5));
+    --color-primary-6: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-6));
+    --color-primary-7: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-7));
+    --color-primary-8: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-8));
+    --color-primary-9: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-9));
+
+    --color-success-base: #6db539;
+    --color-success-1: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-1));
+    --color-success-2: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-2));
+    --color-success-3: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-3));
+    --color-success-4: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-4));
+    --color-success-5: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-5));
+    --color-success-6: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-6));
+    --color-success-7: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-7));
+    --color-success-8: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-8));
+    --color-success-9: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-9));
+
+    --color-warning-base: #edb92a;
+    --color-warning-1: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-1));
+    --color-warning-2: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-2));
+    --color-warning-3: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-3));
+    --color-warning-4: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-4));
+    --color-warning-5: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-5));
+    --color-warning-6: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-6));
+    --color-warning-7: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-7));
+    --color-warning-8: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-8));
+    --color-warning-9: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-9));
+
+    --color-danger-base: #db4c2f;
+    --color-danger-1: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-1));
+    --color-danger-2: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-2));
+    --color-danger-3: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-3));
+    --color-danger-4: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-4));
+    --color-danger-5: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-5));
+    --color-danger-6: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-6));
+    --color-danger-7: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-7));
+    --color-danger-8: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-8));
+    --color-danger-9: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-9));
+}
