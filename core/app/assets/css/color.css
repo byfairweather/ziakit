@@ -11,8 +11,8 @@
 
     --color-interpolation-method: in srgb;
 
-    --color-neutral-white: white;
-    --color-neutral-black: black;
+    --color-white: white;
+    --color-black: black;
     --color-neutral-base: #7f7f7f;
     --color-neutral-1: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-1));
     --color-neutral-2: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-2));

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+    --text-heading-font: "Inter Tight", sans-serif;
+    --text-heading-spacing: 0.25em;
+
+    --text-body-font: "Inter", sans-serif;
+    --text-body-spacing: 1.5em;
+
+    --text-xl-font: var(--text-heading-font);
+    --text-xl-size: 2.5rem;
+    --text-xl-height: 3rem;
+    --text-xl-weight: 900;
+
+    --text-lg-font: var(--text-heading-font);
+    --text-lg-size: 2rem;
+    --text-lg-height: 2.5rem;
+    --text-lg-weight: 700;
+
+    --text-md-font: var(--text-heading-font);
+    --text-md-size: 1.5rem;
+    --text-md-height: 2rem;
+    --text-md-weight: 600;
+
+    --text-sm-font: var(--text-body-font);
+    --text-sm-size: 1rem;
+    --text-sm-height: 1.5rem;
+    --text-sm-weight: 400;
+
+    --text-xs-font: var(--text-body-font);
+    --text-xs-size: 0.8125rem;
+    --text-xs-height: 1.25rem;
+    --text-xs-weight: 400;
+}
+
+* {
+    font-family: var(--text-body-font);
+    font-size: var(--text-sm-size);
+    font-weight: var(--text-sm-weight);
+    line-height: var(--text-sm-height);
+}
+
+h1 {
+    font-family: var(--text-heading-font);
+    font-size: var(--text-xl-size);
+    font-weight: var(--text-xl-weight);
+    line-height: var(--text-xl-height);
+}
+
+h2 {
+    font-family: var(--text-heading-font);
+    font-size: var(--text-lg-size);
+    font-weight: var(--text-lg-weight);
+    line-height: var(--text-lg-height);
+}
+
+h3 {
+    font-family: var(--text-heading-font);
+    font-size: var(--text-md-size);
+    font-weight: var(--text-md-weight);
+    line-height: var(--text-md-height);
+}
+
+p {
+    font-family: var(--text-body-font);
+    font-size: var(--text-sm-size);
+    font-weight: var(--text-sm-weight);
+    line-height: var(--text-sm-height);
+}
+
+ul,
+ol {
+    list-style-position: inside;
+}
+
+:is(h1, h2, h3) {
+    margin-bottom: var(--text-heading-spacing);
+}
+
+:is(p, ul, ol) {
+    margin-bottom: var(--text-body-spacing);
+}
