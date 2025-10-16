@@ -111,6 +111,103 @@
                 <ZiaButton theme="danger" variant="secondary" disabled>Secondary</ZiaButton>
                 <ZiaButton theme="danger" variant="tertiary" disabled>Tertiary</ZiaButton>
             </div>
+
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <div style="display: flex; align-items: flex-start">
+                <ZiaButtonGroup orientation="vertical" gap="spaced">
+                    <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="spaced">
+                    <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="spaced">
+                    <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+            </div>
+            <ZiaButtonGroup orientation="horizontal" gap="collapsed">
+                <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="collapsed">
+                <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="collapsed">
+                <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <div style="display: flex; align-items: flex-start">
+                <ZiaButtonGroup orientation="vertical" gap="collapsed">
+                    <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="collapsed">
+                    <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="collapsed">
+                    <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+            </div>
+            <ZiaButtonGroup orientation="horizontal" gap="none">
+                <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="none">
+                <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <ZiaButtonGroup orientation="horizontal" gap="none">
+                <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+            </ZiaButtonGroup>
+            <div style="display: flex; align-items: flex-start">
+                <ZiaButtonGroup orientation="vertical" gap="none">
+                    <ZiaButton theme="primary" variant="primary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="primary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="none">
+                    <ZiaButton theme="primary" variant="secondary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="secondary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+                <ZiaButtonGroup orientation="vertical" gap="none">
+                    <ZiaButton theme="primary" variant="tertiary">Primary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Secondary</ZiaButton>
+                    <ZiaButton theme="primary" variant="tertiary">Tertiary</ZiaButton>
+                </ZiaButtonGroup>
+            </div>
         </ZiaSection>
         <ZiaSection>
             <h1>

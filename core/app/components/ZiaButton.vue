@@ -38,7 +38,6 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     display: flex;
     height: var(--button-height);
     justify-content: center;
-    margin: 12px;
     outline: none;
     padding: 0 var(--button-horizontal-padding);
     transition: all var(--button-animation-duration-exit) ease-in-out;
