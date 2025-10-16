@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 :root {
     --text-heading-font: "Inter Tight", sans-serif;
     --text-heading-spacing: 0.25em;
+    --text-heading-color: var(--color-neutral-10);
 
     --text-body-font: "Inter", sans-serif;
     --text-body-spacing: 1.5em;
+    --text-body-color: var(--color-neutral-7);
 
     --text-xl-font: var(--text-heading-font);
     --text-xl-size: 2.5rem;
@@ -25,7 +25,7 @@
     --text-sm-font: var(--text-body-font);
     --text-sm-size: 1rem;
     --text-sm-height: 1.5rem;
-    --text-sm-weight: 400;
+    --text-sm-weight: 500;
 
     --text-xs-font: var(--text-body-font);
     --text-xs-size: 0.8125rem;
@@ -33,39 +33,37 @@
     --text-xs-weight: 400;
 }
 
-* {
+body {
+    color: var(--text-body-color);
     font-family: var(--text-body-font);
     font-size: var(--text-sm-size);
     font-weight: var(--text-sm-weight);
     line-height: var(--text-sm-height);
 }
 
-h1 {
+h1,
+h2,
+h3 {
+    color: var(--text-heading-color);
     font-family: var(--text-heading-font);
+}
+
+h1 {
     font-size: var(--text-xl-size);
     font-weight: var(--text-xl-weight);
     line-height: var(--text-xl-height);
 }
 
 h2 {
-    font-family: var(--text-heading-font);
     font-size: var(--text-lg-size);
     font-weight: var(--text-lg-weight);
     line-height: var(--text-lg-height);
 }
 
 h3 {
-    font-family: var(--text-heading-font);
     font-size: var(--text-md-size);
     font-weight: var(--text-md-weight);
     line-height: var(--text-md-height);
-}
-
-p {
-    font-family: var(--text-body-font);
-    font-size: var(--text-sm-size);
-    font-weight: var(--text-sm-weight);
-    line-height: var(--text-sm-height);
 }
 
 ul,
