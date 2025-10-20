@@ -6,8 +6,8 @@
 
 <script setup lang="ts">
 interface Props {
-    theme?: "neutral" | "primary" | "success" | "warning" | "danger" | string;
-    variant?: "primary" | "secondary" | "tertiary" | string;
+    theme?: "neutral" | "primary" | "success" | "warning" | "danger";
+    variant?: "primary" | "secondary" | "tertiary";
 }
 
 withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
@@ -41,6 +41,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     outline: none;
     padding: 0 var(--button-horizontal-padding);
     transition: all var(--button-animation-duration-exit) ease-in-out;
+    white-space: nowrap;
 
     &:hover,
     &:active,

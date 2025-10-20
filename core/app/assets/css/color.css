@@ -13,8 +13,8 @@
     --color-shade-6: black 18%;
     --color-shade-7: black 37%;
     --color-shade-8: black 58%;
-    --color-shade-9: black 75%;
-    --color-shade-10: black 90%;
+    --color-shade-9: black 70%;
+    --color-shade-10: black 80%;
 
     --color-neutral-base: #505050;
     --color-neutral-0: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-0));
@@ -68,7 +68,7 @@
     --color-warning-9: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-9));
     --color-warning-10: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-10));
 
-    --color-danger-base: #db4c2f;
+    --color-danger-base: #e94e2f;
     --color-danger-0: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-0));
     --color-danger-1: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-1));
     --color-danger-2: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-2));
@@ -92,7 +92,7 @@
     --color-theme-7: var(--color-neutral-7);
     --color-theme-8: var(--color-neutral-8);
     --color-theme-9: var(--color-neutral-9);
-    --color-danger-9: var(--color-neutral-9);
+    --color-theme-10: var(--color-neutral-10);
 }
 
 .theme-neutral {

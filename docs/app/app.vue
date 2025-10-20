@@ -1,5 +1,37 @@
 <template>
     <ZiaApp>
+        <ZiaSection :sticky="true" padding="sm" class="theme-primary">
+            <ZiaNavigation>
+                <template #logo>
+                    <ZiaButton variant="tertiary">Logo</ZiaButton>
+                </template>
+                <template #left>
+                    <ZiaButtonGroup gap="spaced">
+                        <ZiaButton variant="tertiary">Home</ZiaButton>
+                        <ZiaButton variant="tertiary">Products</ZiaButton>
+                        <ZiaButton variant="tertiary">News</ZiaButton>
+                        <ZiaButton variant="tertiary">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary">Contact</ZiaButton>
+                        <ZiaButton variant="tertiary">About Us</ZiaButton>
+                    </ZiaButtonGroup>
+                </template>
+                <template #right>
+                    <ZiaButtonGroup gap="spaced">
+                        <ZiaButton variant="tertiary">Cart</ZiaButton>
+                        <ZiaButton variant="tertiary">Sign In</ZiaButton>
+                    </ZiaButtonGroup>
+                </template>
+                <template #mobile>
+                    <ZiaButtonGroup gap="spaced" orientation="vertical">
+                        <ZiaButton variant="tertiary">Home</ZiaButton>
+                        <ZiaButton variant="tertiary">Products</ZiaButton>
+                        <ZiaButton variant="tertiary">About Us</ZiaButton>
+                        <ZiaButton variant="tertiary">Cart</ZiaButton>
+                        <ZiaButton variant="tertiary">Sign In</ZiaButton>
+                    </ZiaButtonGroup>
+                </template>
+            </ZiaNavigation>
+        </ZiaSection>
         <ZiaSection>
             <h1>Color</h1>
             <table style="width: 100%; text-align: center">
