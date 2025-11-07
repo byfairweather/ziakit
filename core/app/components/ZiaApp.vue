@@ -1,5 +1,5 @@
 <template>
-    <div class="zia-app">
+    <div class="zia-app palette-neutral theme-default">
         <slot />
     </div>
 </template>

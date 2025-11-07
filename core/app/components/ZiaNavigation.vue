@@ -40,8 +40,6 @@ withDefaults(defineProps<Props>(), { sticky: false });
     & > .items {
         display: flex;
         flex-grow: 1;
-        opacity: 1;
-        overflow-x: scroll;
 
         & > .left {
             flex-grow: 1;
@@ -60,15 +58,9 @@ withDefaults(defineProps<Props>(), { sticky: false });
             display: none;
         }
     }
-
-    &.loading {
-        & > .items {
-            opacity: 0;
-        }
-    }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 800px) {
     .zia-navigation {
         & > .items-collapsed {
             display: flex;

@@ -1,12 +1,11 @@
 <template>
-    <button class="zia-button" :class="[`theme-${theme}`, `variant-${variant}`]" @mousedown.prevent>
+    <button class="zia-button" :class="[`variant-${variant}`]" @mousedown.prevent>
         <slot />
     </button>
 </template>
 
 <script setup lang="ts">
 interface Props {
-    theme?: "neutral" | "primary" | "success" | "warning" | "danger";
     variant?: "primary" | "secondary" | "tertiary";
 }
 
@@ -15,7 +14,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
 
 <style lang="css">
 .zia-button {
-    --button-animation-duration-enter: var(--animation-duration-fast);
+    --button-animation-duration-enter: var(--animation-duration-slow);
     --button-animation-duration-exit: var(--animation-duration-slow);
     --button-background-color: unset;
     --button-border-radius: var(--forms-control-border-radius);
@@ -55,74 +54,68 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     }
 
     &.variant-primary {
-        --button-background-color: var(--color-theme-5);
+        --button-background-color: var(--color-theme-stark-background-1);
         --button-border-color: transparent;
-        --button-color: var(--color-white);
+        --button-color: var(--color-theme-stark-foreground-1);
 
         &:hover {
-            --button-background-color: var(--color-theme-6);
+            --button-background-color: var(--color-theme-stark-background-2);
             --button-border-color: transparent;
-            --button-color: var(--color-white);
+            --button-color: var(--color-theme-stark-foreground-2);
         }
 
         &:active {
-            --button-background-color: var(--color-theme-7);
+            --button-background-color: var(--color-theme-stark-background-3);
             --button-border-color: transparent;
-            --button-color: var(--color-white);
+            --button-color: var(--color-theme-stark-foreground-2);
         }
 
         &:focus {
-            --button-background-color: var(--color-theme-6);
-            --button-border-color: var(--color-theme-7);
-            --button-color: var(--color-white);
+            /* TODO */
         }
     }
 
     &.variant-secondary {
         --button-background-color: transparent;
-        --button-border-color: var(--color-theme-5);
-        --button-color: var(--color-theme-5);
+        --button-border-color: var(--color-theme-muted-foreground-1);
+        --button-color: var(--color-theme-muted-foreground-1);
 
         &:hover {
-            --button-background-color: transparent;
-            --button-border-color: var(--color-theme-6);
-            --button-color: var(--color-theme-6);
+            --button-background-color: var(--color-theme-muted-background-1);
+            --button-border-color: var(--color-theme-muted-foreground-2);
+            --button-color: var(--color-theme-muted-foreground-2);
         }
 
         &:active {
-            --button-background-color: var(--color-theme-0);
-            --button-border-color: var(--color-theme-7);
-            --button-color: var(--color-theme-7);
+            --button-background-color: var(--color-theme-muted-background-2);
+            --button-border-color: var(--color-theme-muted-foreground-3);
+            --button-color: var(--color-theme-muted-foreground-3);
         }
 
         &:focus {
-            --button-background-color: var(--color-theme-0);
-            --button-border-color: var(--color-theme-6);
-            --button-color: var(--color-theme-6);
+            /* TODO */
         }
     }
 
     &.variant-tertiary {
         --button-background-color: transparent;
         --button-border-color: transparent;
-        --button-color: var(--color-theme-5);
+        --button-color: var(--color-theme-muted-foreground-1);
 
         &:hover {
-            --button-background-color: transparent;
+            --button-background-color: var(--color-theme-muted-background-1);
             --button-border-color: transparent;
-            --button-color: var(--color-theme-7);
+            --button-color: var(--color-theme-muted-foreground-2);
         }
 
         &:active {
-            --button-background-color: var(--color-theme-0);
+            --button-background-color: var(--color-theme-muted-background-2);
             --button-border-color: transparent;
-            --button-color: var(--color-theme-7);
+            --button-color: var(--color-theme-muted-foreground-3);
         }
 
         &:focus {
-            --button-background-color: var(--color-theme-0);
-            --button-border-color: var(--color-theme-6);
-            --button-color: var(--color-theme-6);
+            /* TODO */
         }
     }
 }

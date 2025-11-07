@@ -1,171 +1,164 @@
 :root {
-    --color-interpolation-method: in srgb;
+    --color-neutral-base: hsl(207, 4%, 55%);
+    --color-primary-base: hsl(198, 100%, 41%);
+    --color-secondary-base: hsl(271, 34%, 53%);
+    --color-tertiary-base: hsl(180, 66%, 42%);
+    --color-success-base: hsl(89, 60%, 40%);
+    --color-warning-base: hsl(36, 73%, 49%);
+    --color-danger-base: hsl(10, 71%, 50%);
 
-    --color-white: white;
-    --color-black: black;
-
-    --color-shade-0: white 92%;
-    --color-shade-1: white 85%;
-    --color-shade-2: white 70%;
-    --color-shade-3: white 50%;
-    --color-shade-4: white 25%;
+    --color-shade-black: black 85%;
+    --color-shade-0: black 80%;
+    --color-shade-1: black 60%;
+    --color-shade-2: black 50%;
+    --color-shade-3: black 30%;
+    --color-shade-4: black 15%;
     --color-shade-5: white 0%;
-    --color-shade-6: black 18%;
-    --color-shade-7: black 37%;
-    --color-shade-8: black 58%;
-    --color-shade-9: black 70%;
-    --color-shade-10: black 80%;
-
-    --color-neutral-base: #505050;
-    --color-neutral-0: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-0));
-    --color-neutral-1: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-1));
-    --color-neutral-2: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-2));
-    --color-neutral-3: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-3));
-    --color-neutral-4: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-4));
-    --color-neutral-5: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-5));
-    --color-neutral-6: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-6));
-    --color-neutral-7: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-7));
-    --color-neutral-8: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-8));
-    --color-neutral-9: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-9));
-    --color-neutral-10: color-mix(var(--color-interpolation-method), var(--color-neutral-base), var(--color-shade-10));
-
-    --color-primary-base: #00addd;
-    --color-primary-0: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-0));
-    --color-primary-1: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-1));
-    --color-primary-2: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-2));
-    --color-primary-3: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-3));
-    --color-primary-4: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-4));
-    --color-primary-5: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-5));
-    --color-primary-6: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-6));
-    --color-primary-7: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-7));
-    --color-primary-8: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-8));
-    --color-primary-9: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-9));
-    --color-primary-10: color-mix(var(--color-interpolation-method), var(--color-primary-base), var(--color-shade-10));
-
-    --color-success-base: #6db539;
-    --color-success-0: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-0));
-    --color-success-1: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-1));
-    --color-success-2: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-2));
-    --color-success-3: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-3));
-    --color-success-4: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-4));
-    --color-success-5: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-5));
-    --color-success-6: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-6));
-    --color-success-7: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-7));
-    --color-success-8: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-8));
-    --color-success-9: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-9));
-    --color-success-10: color-mix(var(--color-interpolation-method), var(--color-success-base), var(--color-shade-10));
-
-    --color-warning-base: #eba818;
-    --color-warning-0: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-0));
-    --color-warning-1: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-1));
-    --color-warning-2: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-2));
-    --color-warning-3: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-3));
-    --color-warning-4: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-4));
-    --color-warning-5: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-5));
-    --color-warning-6: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-6));
-    --color-warning-7: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-7));
-    --color-warning-8: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-8));
-    --color-warning-9: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-9));
-    --color-warning-10: color-mix(var(--color-interpolation-method), var(--color-warning-base), var(--color-shade-10));
-
-    --color-danger-base: #e94e2f;
-    --color-danger-0: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-0));
-    --color-danger-1: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-1));
-    --color-danger-2: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-2));
-    --color-danger-3: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-3));
-    --color-danger-4: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-4));
-    --color-danger-5: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-5));
-    --color-danger-6: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-6));
-    --color-danger-7: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-7));
-    --color-danger-8: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-8));
-    --color-danger-9: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-9));
-    --color-danger-10: color-mix(var(--color-interpolation-method), var(--color-danger-base), var(--color-shade-10));
-
-    --color-theme-base: var(--color-neutral-base);
-    --color-theme-0: var(--color-neutral-0);
-    --color-theme-1: var(--color-neutral-1);
-    --color-theme-2: var(--color-neutral-2);
-    --color-theme-3: var(--color-neutral-3);
-    --color-theme-4: var(--color-neutral-4);
-    --color-theme-5: var(--color-neutral-5);
-    --color-theme-6: var(--color-neutral-6);
-    --color-theme-7: var(--color-neutral-7);
-    --color-theme-8: var(--color-neutral-8);
-    --color-theme-9: var(--color-neutral-9);
-    --color-theme-10: var(--color-neutral-10);
+    --color-shade-6: white 30%;
+    --color-shade-7: white 50%;
+    --color-shade-8: white 70%;
+    --color-shade-9: white 80%;
+    --color-shade-10: white 85%;
+    --color-shade-white: white 94%;
 }
 
-.theme-neutral {
-    --color-theme-base: var(--color-neutral-base);
-    --color-theme-0: var(--color-neutral-0);
-    --color-theme-1: var(--color-neutral-1);
-    --color-theme-2: var(--color-neutral-2);
-    --color-theme-3: var(--color-neutral-3);
-    --color-theme-4: var(--color-neutral-4);
-    --color-theme-5: var(--color-neutral-5);
-    --color-theme-6: var(--color-neutral-6);
-    --color-theme-7: var(--color-neutral-7);
-    --color-theme-8: var(--color-neutral-8);
-    --color-theme-9: var(--color-neutral-9);
-    --color-theme-10: var(--color-neutral-10);
+.scheme-dark {
+    color-scheme: dark;
 }
 
-.theme-primary {
-    --color-theme-base: var(--color-primary-base);
-    --color-theme-0: var(--color-primary-0);
-    --color-theme-1: var(--color-primary-1);
-    --color-theme-2: var(--color-primary-2);
-    --color-theme-3: var(--color-primary-3);
-    --color-theme-4: var(--color-primary-4);
-    --color-theme-5: var(--color-primary-5);
-    --color-theme-6: var(--color-primary-6);
-    --color-theme-7: var(--color-primary-7);
-    --color-theme-8: var(--color-primary-8);
-    --color-theme-9: var(--color-primary-9);
-    --color-theme-10: var(--color-primary-10);
+.scheme-light {
+    color-scheme: light;
 }
 
-.theme-success {
-    --color-theme-base: var(--color-success-base);
-    --color-theme-0: var(--color-success-0);
-    --color-theme-1: var(--color-success-1);
-    --color-theme-2: var(--color-success-2);
-    --color-theme-3: var(--color-success-3);
-    --color-theme-4: var(--color-success-4);
-    --color-theme-5: var(--color-success-5);
-    --color-theme-6: var(--color-success-6);
-    --color-theme-7: var(--color-success-7);
-    --color-theme-8: var(--color-success-8);
-    --color-theme-9: var(--color-success-9);
-    --color-theme-10: var(--color-success-10);
+.palette-neutral {
+    --color-palette-base: var(--color-neutral-base);
 }
 
-.theme-warning {
-    --color-theme-base: var(--color-warning-base);
-    --color-theme-0: var(--color-warning-0);
-    --color-theme-1: var(--color-warning-1);
-    --color-theme-2: var(--color-warning-2);
-    --color-theme-3: var(--color-warning-3);
-    --color-theme-4: var(--color-warning-4);
-    --color-theme-5: var(--color-warning-5);
-    --color-theme-6: var(--color-warning-6);
-    --color-theme-7: var(--color-warning-7);
-    --color-theme-8: var(--color-warning-8);
-    --color-theme-9: var(--color-warning-9);
-    --color-theme-10: var(--color-warning-10);
+.palette-primary {
+    --color-palette-base: var(--color-primary-base);
 }
 
-.theme-danger {
-    --color-theme-base: var(--color-danger-base);
-    --color-theme-0: var(--color-danger-0);
-    --color-theme-1: var(--color-danger-1);
-    --color-theme-2: var(--color-danger-2);
-    --color-theme-3: var(--color-danger-3);
-    --color-theme-4: var(--color-danger-4);
-    --color-theme-5: var(--color-danger-5);
-    --color-theme-6: var(--color-danger-6);
-    --color-theme-7: var(--color-danger-7);
-    --color-theme-8: var(--color-danger-8);
-    --color-theme-9: var(--color-danger-9);
-    --color-theme-10: var(--color-danger-10);
+.palette-secondary {
+    --color-palette-base: var(--color-secondary-base);
+}
+
+.palette-tertiary {
+    --color-palette-base: var(--color-tertiary-base);
+}
+
+.palette-success {
+    --color-palette-base: var(--color-success-base);
+}
+
+.palette-warning {
+    --color-palette-base: var(--color-warning-base);
+}
+
+.palette-danger {
+    --color-palette-base: var(--color-danger-base);
+}
+
+.palette-neutral,
+.palette-primary,
+.palette-secondary,
+.palette-tertiary,
+.palette-success,
+.palette-warning,
+.palette-danger {
+    --color-neutral-black: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-black));
+    --color-neutral-0: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-0));
+    --color-neutral-1: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-1));
+    --color-neutral-2: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-2));
+    --color-neutral-3: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-3));
+    --color-neutral-4: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-4));
+    --color-neutral-5: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-5));
+    --color-neutral-6: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-6));
+    --color-neutral-7: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-7));
+    --color-neutral-8: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-8));
+    --color-neutral-9: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-9));
+    --color-neutral-10: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-10));
+    --color-neutral-white: color-mix(in srgb, var(--color-neutral-base), var(--color-shade-white));
+
+    --color-palette-black: color-mix(in srgb, var(--color-palette-base), var(--color-shade-black));
+    --color-palette-0: color-mix(in srgb, var(--color-palette-base), var(--color-shade-0));
+    --color-palette-1: color-mix(in srgb, var(--color-palette-base), var(--color-shade-1));
+    --color-palette-2: color-mix(in srgb, var(--color-palette-base), var(--color-shade-2));
+    --color-palette-3: color-mix(in srgb, var(--color-palette-base), var(--color-shade-3));
+    --color-palette-4: color-mix(in srgb, var(--color-palette-base), var(--color-shade-4));
+    --color-palette-5: color-mix(in srgb, var(--color-palette-base), var(--color-shade-5));
+    --color-palette-6: color-mix(in srgb, var(--color-palette-base), var(--color-shade-6));
+    --color-palette-7: color-mix(in srgb, var(--color-palette-base), var(--color-shade-7));
+    --color-palette-8: color-mix(in srgb, var(--color-palette-base), var(--color-shade-8));
+    --color-palette-9: color-mix(in srgb, var(--color-palette-base), var(--color-shade-9));
+    --color-palette-10: color-mix(in srgb, var(--color-palette-base), var(--color-shade-10));
+    --color-palette-white: color-mix(in srgb, var(--color-palette-base), var(--color-shade-white));
+}
+
+.theme-default {
+    --color-theme-default-background-1: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --color-theme-default-background-2: light-dark(var(--color-neutral-10), var(--color-neutral-0));
+    --color-theme-default-background-3: light-dark(var(--color-neutral-9), var(--color-neutral-2));
+    --color-theme-default-foreground-1: light-dark(var(--color-neutral-black), var(--color-neutral-white));
+    --color-theme-default-foreground-2: light-dark(var(--color-neutral-0), var(--color-neutral-10));
+    --color-theme-default-foreground-3: light-dark(var(--color-neutral-1), var(--color-neutral-9));
+
+    --color-theme-stark-background-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-stark-background-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-stark-background-3: light-dark(var(--color-palette-3), var(--color-palette-7));
+    --color-theme-stark-foreground-1: light-dark(var(--color-palette-white), var(--color-palette-black));
+    --color-theme-stark-foreground-2: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-stark-foreground-3: light-dark(var(--color-palette-9), var(--color-palette-1));
+
+    --color-theme-muted-background-1: light-dark(var(--color-palette-10), var(--color-palette-1));
+    --color-theme-muted-background-2: light-dark(var(--color-palette-9), var(--color-palette-2));
+    --color-theme-muted-background-3: light-dark(var(--color-palette-8), var(--color-palette-3));
+    --color-theme-muted-foreground-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-muted-foreground-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-muted-foreground-3: light-dark(var(--color-palette-3), var(--color-palette-7));
+}
+
+.theme-emphasis {
+    --color-theme-default-background-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-default-background-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-default-background-3: light-dark(var(--color-palette-3), var(--color-palette-7));
+    --color-theme-default-foreground-1: light-dark(var(--color-palette-white), var(--color-palette-black));
+    --color-theme-default-foreground-2: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-default-foreground-3: light-dark(var(--color-palette-9), var(--color-palette-1));
+
+    --color-theme-stark-background-1: light-dark(var(--color-palette-white), var(--color-palette-black));
+    --color-theme-stark-background-2: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-stark-background-3: light-dark(var(--color-palette-9), var(--color-palette-1));
+    --color-theme-stark-foreground-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-stark-foreground-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-stark-foreground-3: light-dark(var(--color-palette-3), var(--color-palette-7));
+
+    --color-theme-muted-background-1: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-muted-background-2: light-dark(var(--color-palette-3), var(--color-palette-7));
+    --color-theme-muted-background-3: light-dark(var(--color-palette-2), var(--color-palette-8));
+    --color-theme-muted-foreground-1: light-dark(var(--color-palette-white), var(--color-palette-black));
+    --color-theme-muted-foreground-2: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-muted-foreground-3: light-dark(var(--color-palette-9), var(--color-palette-1));
+}
+
+.theme-subtle {
+    --color-theme-default-background-1: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-default-background-2: light-dark(var(--color-palette-9), var(--color-palette-1));
+    --color-theme-default-background-3: light-dark(var(--color-palette-8), var(--color-palette-2));
+    --color-theme-default-foreground-1: light-dark(var(--color-palette-0), var(--color-palette-10));
+    --color-theme-default-foreground-2: light-dark(var(--color-palette-1), var(--color-palette-9));
+    --color-theme-default-foreground-3: light-dark(var(--color-palette-2), var(--color-palette-8));
+
+    --color-theme-stark-background-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-stark-background-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-stark-background-3: light-dark(var(--color-palette-3), var(--color-palette-7));
+    --color-theme-stark-foreground-1: light-dark(var(--color-palette-10), var(--color-palette-0));
+    --color-theme-stark-foreground-2: light-dark(var(--color-palette-9), var(--color-palette-1));
+    --color-theme-stark-foreground-3: light-dark(var(--color-palette-8), var(--color-palette-2));
+
+    --color-theme-muted-background-1: light-dark(var(--color-palette-8), var(--color-palette-1));
+    --color-theme-muted-background-2: light-dark(var(--color-palette-7), var(--color-palette-2));
+    --color-theme-muted-background-3: light-dark(var(--color-palette-6), var(--color-palette-3));
+    --color-theme-muted-foreground-1: light-dark(var(--color-palette-5), var(--color-palette-5));
+    --color-theme-muted-foreground-2: light-dark(var(--color-palette-4), var(--color-palette-6));
+    --color-theme-muted-foreground-3: light-dark(var(--color-palette-3), var(--color-palette-7));
 }

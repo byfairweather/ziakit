@@ -12,18 +12,18 @@ interface Props {
     padding?: "xl" | "lg" | "md" | "sm" | "xs" | "none";
 }
 
-withDefaults(defineProps<Props>(), { sticky: false, padding: "sm" });
+withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
 </script>
 
 <style lang="css">
 .zia-section {
-    --section-background-color: transparent;
+    --section-background-color: var(--color-theme-default-background-1);
     --section-padding-xs: 10px;
     --section-padding-sm: 15px;
     --section-padding-md: 20px;
     --section-padding-lg: 40px;
     --section-padding-xl: 60px;
-    --section-width: clamp(300px, 1080px, 80%);
+    --section-width: clamp(300px, 1080px, 90%);
 
     background-color: var(--section-background-color);
     display: flex;
@@ -33,19 +33,11 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "sm" });
         width: var(--section-width);
     }
 
-    &[class*="theme-"] {
-        --section-background-color: var(--color-white);
-
-        &.bold {
-            --section-background-color: var(--color-theme-5);
-        }
-    }
-
     &.sticky {
         box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
         position: sticky;
         top: 0;
-        z-index: 1000;
+        z-index: 10000;
     }
 
     &.padding-xs {
