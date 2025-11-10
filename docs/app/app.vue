@@ -1,6 +1,6 @@
 <template>
     <ZiaApp :class="[`scheme-${scheme}`]">
-        <ZiaSection :sticky="true" padding="sm" class="theme-neutral">
+        <ZiaSection :sticky="true" padding="sm" class="theme-default">
             <ZiaNavigation>
                 <template #logo>
                     <ZiaButton variant="tertiary">Logo</ZiaButton>
@@ -146,7 +146,7 @@
                 <ZiaButton :variant="palette == 'secondary' ? 'primary' : 'secondary'" @click="palette = 'secondary'"
                     >Secondary</ZiaButton
                 >
-                <ZiaButton :variant="palette == 'teriary' ? 'primary' : 'secondary'" @click="palette = 'tertiary'"
+                <ZiaButton :variant="palette == 'tertiary' ? 'primary' : 'secondary'" @click="palette = 'tertiary'"
                     >Tertiary</ZiaButton
                 >
                 <ZiaButton :variant="palette == 'success' ? 'primary' : 'secondary'" @click="palette = 'success'"
@@ -164,12 +164,8 @@
                 <ZiaButton :variant="theme == 'default' ? 'primary' : 'secondary'" @click="theme = 'default'"
                     >Default</ZiaButton
                 >
-                <ZiaButton :variant="theme == 'emphasis' ? 'primary' : 'secondary'" @click="theme = 'emphasis'"
-                    >Emphasis</ZiaButton
-                >
-                <ZiaButton :variant="theme == 'subtle' ? 'primary' : 'secondary'" @click="theme = 'subtle'"
-                    >Subtle</ZiaButton
-                >
+                <ZiaButton :variant="theme == 'bold' ? 'primary' : 'secondary'" @click="theme = 'bold'">Bold</ZiaButton>
+                <ZiaButton :variant="theme == 'soft' ? 'primary' : 'secondary'" @click="theme = 'soft'">Soft</ZiaButton>
             </ZiaButtonGroup>
             <br />
             <hr />
@@ -178,6 +174,7 @@
                 <ZiaButton variant="primary">Primary</ZiaButton>
                 <ZiaButton variant="secondary">Secondary</ZiaButton>
                 <ZiaButton variant="tertiary">Tertiary</ZiaButton>
+                <ZiaButton class="theme-default palette-danger" variant="primary">Override</ZiaButton>
             </ZiaButtonGroup>
         </ZiaSection>
         <ZiaSection>
@@ -269,10 +266,13 @@ const theme = ref("default");
 
 <style lang="css">
 tr {
-    background-color: var(--color-theme-5);
-
     td {
+        color: var(--color-palette-10);
         width: calc(100% / 11);
+    }
+
+    td:nth-child(n + 7) {
+        color: var(--color-palette-0);
     }
 }
 </style>

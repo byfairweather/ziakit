@@ -1,11 +1,9 @@
 :root {
     --text-heading-font: "Inter Tight", sans-serif;
     --text-heading-spacing: 0.25em;
-    --text-heading-color: var(--color-theme-default-foreground-1);
 
     --text-body-font: "Inter", sans-serif;
     --text-body-spacing: 1.5em;
-    --text-body-color: var(--color-theme-default-foreground-3);
 
     --text-xl-font: var(--text-heading-font);
     --text-xl-size: 2.5rem;
@@ -33,9 +31,7 @@
     --text-xs-weight: 400;
 }
 
-.zia-app,
-p {
-    color: var(--color-theme-default-foreground-2);
+.zia-app {
     font-family: var(--text-body-font);
     font-size: var(--text-sm-size);
     font-weight: var(--text-sm-weight);

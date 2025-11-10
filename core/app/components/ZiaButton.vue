@@ -67,7 +67,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
         &:active {
             --button-background-color: var(--color-theme-stark-background-3);
             --button-border-color: transparent;
-            --button-color: var(--color-theme-stark-foreground-2);
+            --button-color: var(--color-theme-stark-foreground-3);
         }
 
         &:focus {

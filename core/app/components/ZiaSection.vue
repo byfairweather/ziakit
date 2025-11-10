@@ -26,6 +26,7 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
     --section-width: clamp(300px, 1080px, 90%);
 
     background-color: var(--section-background-color);
+    color: var(--color-theme-default-foreground-2);
     display: flex;
     justify-content: center;
 
