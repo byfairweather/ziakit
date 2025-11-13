@@ -41,7 +41,7 @@
 h1,
 h2,
 h3 {
-    color: var(--color-theme-default-foreground-1);
+    color: var(--color-foreground);
     font-family: var(--text-heading-font);
 }
 

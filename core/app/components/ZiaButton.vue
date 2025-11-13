@@ -54,68 +54,63 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     }
 
     &.variant-primary {
-        --button-background-color: var(--color-theme-stark-background-1);
+        --button-background-color: var(--color-foreground-accent);
         --button-border-color: transparent;
-        --button-color: var(--color-theme-stark-foreground-1);
+        --button-color: var(--color-foreground-accent-inverted);
 
         &:hover {
-            --button-background-color: var(--color-theme-stark-background-2);
+            --button-background-color: var(--color-foreground-accent);
             --button-border-color: transparent;
-            --button-color: var(--color-theme-stark-foreground-2);
+            --button-color: var(--color-foreground-accent-inverted);
+            opacity: 0.9;
         }
 
-        &:active {
-            --button-background-color: var(--color-theme-stark-background-3);
-            --button-border-color: transparent;
-            --button-color: var(--color-theme-stark-foreground-3);
-        }
-
+        &:active,
         &:focus {
-            /* TODO */
+            --button-background-color: var(--color-foreground-accent);
+            --button-border-color: transparent;
+            --button-color: var(--color-foreground-accent-inverted);
+            opacity: 0.8;
         }
     }
 
     &.variant-secondary {
         --button-background-color: transparent;
-        --button-border-color: var(--color-theme-muted-foreground-1);
-        --button-color: var(--color-theme-muted-foreground-1);
+        --button-border-color: var(--color-foreground-accent);
+        --button-color: var(--color-foreground-accent);
 
         &:hover {
-            --button-background-color: var(--color-theme-muted-background-1);
-            --button-border-color: var(--color-theme-muted-foreground-2);
-            --button-color: var(--color-theme-muted-foreground-2);
+            --button-background-color: var(--color-background-accent);
+            --button-border-color: var(--color-foreground-accent);
+            --button-color: var(--color-background-accent-inverted);
         }
 
-        &:active {
-            --button-background-color: var(--color-theme-muted-background-2);
-            --button-border-color: var(--color-theme-muted-foreground-3);
-            --button-color: var(--color-theme-muted-foreground-3);
-        }
-
+        &:active,
         &:focus {
-            /* TODO */
+            --button-background-color: var(--color-background-accent);
+            --button-border-color: var(--color-foreground-accent);
+            --button-color: var(--color-background-accent-inverted);
+            opacity: 0.9;
         }
     }
 
     &.variant-tertiary {
         --button-background-color: transparent;
         --button-border-color: transparent;
-        --button-color: var(--color-theme-muted-foreground-1);
+        --button-color: var(--color-foreground-accent);
 
         &:hover {
-            --button-background-color: var(--color-theme-muted-background-1);
+            --button-background-color: var(--color-background-accent);
             --button-border-color: transparent;
-            --button-color: var(--color-theme-muted-foreground-2);
+            --button-color: var(--color-background-accent-inverted);
         }
 
-        &:active {
-            --button-background-color: var(--color-theme-muted-background-2);
-            --button-border-color: transparent;
-            --button-color: var(--color-theme-muted-foreground-3);
-        }
-
+        &:active,
         &:focus {
-            /* TODO */
+            --button-background-color: var(--color-background-accent);
+            --button-border-color: transparent;
+            --button-color: var(--color-background-accent-inverted);
+            opacity: 0.9;
         }
     }
 }

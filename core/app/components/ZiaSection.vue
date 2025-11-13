@@ -17,7 +17,8 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
 
 <style lang="css">
 .zia-section {
-    --section-background-color: var(--color-theme-default-background-1);
+    --section-background-color: var(--color-background);
+    --section-color: var(--color-foreground);
     --section-padding-xs: 10px;
     --section-padding-sm: 15px;
     --section-padding-md: 20px;
@@ -26,7 +27,7 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
     --section-width: clamp(300px, 1080px, 90%);
 
     background-color: var(--section-background-color);
-    color: var(--color-theme-default-foreground-2);
+    color: var(--section-color);
     display: flex;
     justify-content: center;
 
