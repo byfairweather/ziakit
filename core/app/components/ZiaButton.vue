@@ -35,6 +35,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     color: var(--button-color);
     cursor: pointer;
     display: flex;
+    font-weight: 600;
     height: var(--button-height);
     justify-content: center;
     outline: none;
