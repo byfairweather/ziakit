@@ -91,7 +91,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
             --button-background-color: var(--color-background-accent);
             --button-border-color: var(--color-foreground-accent);
             --button-color: var(--color-background-accent-inverted);
-            opacity: 0.9;
+            opacity: 0.8;
         }
     }
 
@@ -111,7 +111,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
             --button-background-color: var(--color-background-accent);
             --button-border-color: transparent;
             --button-color: var(--color-background-accent-inverted);
-            opacity: 0.9;
+            opacity: 0.8;
         }
     }
 }

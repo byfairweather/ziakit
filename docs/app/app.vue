@@ -23,9 +23,10 @@
                 <template #mobile>
                     <ZiaButtonGroup gap="spaced" orientation="vertical">
                         <ZiaButton variant="tertiary">Products</ZiaButton>
+                        <ZiaButton variant="tertiary">News</ZiaButton>
+                        <ZiaButton variant="tertiary">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary">Contact</ZiaButton>
                         <ZiaButton variant="tertiary">About Us</ZiaButton>
-                        <ZiaButton variant="tertiary">Cart</ZiaButton>
-                        <ZiaButton variant="tertiary">Sign In</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
             </ZiaNavigation>
@@ -197,6 +198,57 @@
                 <ZiaButton class="color-theme-default color-palette-danger" variant="primary">Override</ZiaButton>
             </ZiaButtonGroup>
         </ZiaSection>
+        <ZiaSection>
+            <h1>Popovers</h1>
+            <ZiaButtonGroup orientation="horizontal">
+                <ZiaButton :variant="popoverY == 'above' ? 'primary' : 'secondary'" @click="popoverY = 'above'"
+                    >Above</ZiaButton
+                >
+                <ZiaButton :variant="popoverY == 'top' ? 'primary' : 'secondary'" @click="popoverY = 'top'"
+                    >Top</ZiaButton
+                >
+                <ZiaButton :variant="popoverY == 'center' ? 'primary' : 'secondary'" @click="popoverY = 'center'"
+                    >Center</ZiaButton
+                >
+                <ZiaButton :variant="popoverY == 'bottom' ? 'primary' : 'secondary'" @click="popoverY = 'bottom'"
+                    >Bottom</ZiaButton
+                >
+                <ZiaButton :variant="popoverY == 'below' ? 'primary' : 'secondary'" @click="popoverY = 'below'"
+                    >Below</ZiaButton
+                >
+            </ZiaButtonGroup>
+            <br />
+            <ZiaButtonGroup orientation="horizontal">
+                <ZiaButton
+                    :variant="popoverX == 'outside-left' ? 'primary' : 'secondary'"
+                    @click="popoverX = 'outside-left'"
+                    >Outside Left</ZiaButton
+                >
+                <ZiaButton :variant="popoverX == 'left' ? 'primary' : 'secondary'" @click="popoverX = 'left'"
+                    >Left</ZiaButton
+                >
+                <ZiaButton :variant="popoverX == 'center' ? 'primary' : 'secondary'" @click="popoverX = 'center'"
+                    >Center</ZiaButton
+                >
+                <ZiaButton :variant="popoverX == 'right' ? 'primary' : 'secondary'" @click="popoverX = 'right'"
+                    >Right</ZiaButton
+                >
+                <ZiaButton
+                    :variant="popoverX == 'outside-right' ? 'primary' : 'secondary'"
+                    @click="popoverX = 'outside-right'"
+                    >Outside Right</ZiaButton
+                >
+            </ZiaButtonGroup>
+            <br /><br /><br /><br />
+            <ZiaButton ref="popoverButton" @click="popoverOpen = !popoverOpen">Toggle Popover</ZiaButton>
+            <ZiaPopover
+                :anchor="popoverButton"
+                :open="popoverOpen"
+                :position="{ vertical: popoverY, horizontal: popoverX }"
+                >This is a popover</ZiaPopover
+            >
+            <br /><br />
+        </ZiaSection>
         <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
             <h1>
                 Cras accumsan accumsan est vel sodales. Praesent id odio nec orci accumsan consequat. Mauris nec blandit
@@ -276,6 +328,10 @@ const scheme = ref("light");
 const palette = ref("neutral");
 const theme = ref("default");
 const colors = useTemplateRef("colors");
+const popoverButton = useTemplateRef("popoverButton");
+const popoverOpen = ref(false);
+const popoverY = ref("below");
+const popoverX = ref("left");
 
 onMounted(() => {
     if (!colors.value) return;
@@ -285,7 +341,6 @@ onMounted(() => {
 
 function calculateContrastRatio() {
     if (!colors.value) return;
-    console.log(colors.value.children.length);
     for (let i = 0; i < colors.value.children.length; i++) {
         const row = colors.value.children[i]!;
         const styles = getComputedStyle(row);

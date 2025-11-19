@@ -12,20 +12,23 @@
             </div>
         </div>
         <div class="items-collapsed">
-            <ZiaButton variant="tertiary">=</ZiaButton>
-            <div class="popover">
-                <!-- TODO -->
+            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen"
+                >=</ZiaButton
+            >
+            <ZiaPopover
+                :anchor="mobileMenuButton"
+                :open="mobileMenuOpen"
+                :position="{ vertical: 'below', horizontal: 'right' }"
+            >
                 <slot name="mobile" />
-            </div>
+            </ZiaPopover>
         </div>
     </nav>
 </template>
 
 <script setup lang="ts">
-interface Props {
-    sticky?: boolean;
-}
-withDefaults(defineProps<Props>(), { sticky: false });
+const mobileMenuButton = useTemplateRef("mobile-menu-button");
+const mobileMenuOpen = ref(false);
 </script>
 
 <style lang="css">
