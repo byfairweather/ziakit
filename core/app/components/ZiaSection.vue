@@ -30,6 +30,7 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
     color: var(--section-color);
     display: flex;
     justify-content: center;
+    overflow-x: scroll;
 
     & > .content {
         width: var(--section-width);
@@ -39,7 +40,7 @@ withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
         box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
         position: sticky;
         top: 0;
-        z-index: 10000;
+        z-index: 10;
     }
 
     &.padding-xs {

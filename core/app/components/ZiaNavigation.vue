@@ -16,8 +16,8 @@
                 >=</ZiaButton
             >
             <ZiaPopover
+                v-model="mobileMenuOpen"
                 :anchor="mobileMenuButton"
-                :open="mobileMenuOpen"
                 :position="{ vertical: 'below', horizontal: 'right' }"
             >
                 <slot name="mobile" />

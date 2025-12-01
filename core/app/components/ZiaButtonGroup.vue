@@ -19,12 +19,6 @@ withDefaults(defineProps<Props>(), { orientation: "horizontal", gap: "collapsed"
 
     display: flex;
 
-    & > .zia-button:hover,
-    & > .zia-button:focus,
-    & > .zia-button:active {
-        z-index: 1000;
-    }
-
     &.orientation-horizontal {
         flex-direction: row;
 
