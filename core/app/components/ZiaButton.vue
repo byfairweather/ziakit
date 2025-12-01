@@ -1,5 +1,5 @@
 <template>
-    <button class="zia-button" :class="[`variant-${variant}`]" @mousedown.prevent>
+    <button class="zia-button" :class="[`variant-${variant}`]">
         <slot />
     </button>
 </template>
@@ -9,7 +9,7 @@ interface Props {
     variant?: "primary" | "secondary" | "tertiary";
 }
 
-withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
+const { variant = "primary" } = defineProps<Props>();
 </script>
 
 <style lang="css">
@@ -41,11 +41,12 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
     outline: none;
     padding: 0 var(--button-horizontal-padding);
     transition: all var(--button-animation-duration-exit) ease-in-out;
+    user-select: none;
     white-space: nowrap;
 
     &:hover,
     &:active,
-    &:focus {
+    &:focus-visible {
         transition: all var(--button-animation-duration-enter) ease-in-out;
     }
 
@@ -67,7 +68,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
         }
 
         &:active,
-        &:focus {
+        &:focus-visible {
             --button-background-color: var(--color-foreground-accent);
             --button-border-color: transparent;
             --button-color: var(--color-foreground-accent-inverted);
@@ -87,7 +88,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
         }
 
         &:active,
-        &:focus {
+        &:focus-visible {
             --button-background-color: var(--color-background-accent);
             --button-border-color: var(--color-foreground-accent);
             --button-color: var(--color-background-accent-inverted);
@@ -107,7 +108,7 @@ withDefaults(defineProps<Props>(), { theme: "neutral", variant: "primary" });
         }
 
         &:active,
-        &:focus {
+        &:focus-visible {
             --button-background-color: var(--color-background-accent);
             --button-border-color: transparent;
             --button-color: var(--color-background-accent-inverted);

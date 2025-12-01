@@ -11,7 +11,15 @@
                         <ZiaButton variant="tertiary">News</ZiaButton>
                         <ZiaButton variant="tertiary">Blog</ZiaButton>
                         <ZiaButton variant="tertiary">Contact</ZiaButton>
-                        <ZiaButton variant="tertiary">About Us</ZiaButton>
+                        <ZiaButton
+                            variant="tertiary"
+                            @click="
+                                () => {
+                                    console.log('wow');
+                                }
+                            "
+                            >About Us</ZiaButton
+                        >
                     </ZiaButtonGroup>
                 </template>
                 <template #right>

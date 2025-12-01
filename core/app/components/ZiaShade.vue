@@ -24,7 +24,7 @@ function dismiss() {
 <style lang="css">
 .zia-shade {
     backdrop-filter: blur(3px);
-    background-color: light-dark(rgba(0, 0, 0, 0.25), rgb(0, 0, 0, 0.1));
+    background-color: rgba(0, 0, 0, 0.25);
     bottom: 0;
     left: 0;
     position: fixed;

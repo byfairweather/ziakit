@@ -10,7 +10,7 @@ interface Props {
     gap?: "collapsed" | "spaced" | "none";
 }
 
-withDefaults(defineProps<Props>(), { orientation: "horizontal", gap: "collapsed" });
+const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
 </script>
 
 <style lang="css">

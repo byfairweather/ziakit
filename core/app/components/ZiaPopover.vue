@@ -70,14 +70,19 @@ watchPostEffect(() => {
         window.addEventListener("scroll", close);
         window.addEventListener("resize", close);
     } else {
-        window.removeEventListener("scroll", close);
-        window.removeEventListener("resize", close);
+        window.addEventListener("scroll", updatePosition);
+        window.addEventListener("resize", updatePosition);
     }
 });
 
 onUnmounted(() => {
-    window.removeEventListener("scroll", close);
-    window.removeEventListener("resize", close);
+    if (lightDismiss == true) {
+        window.removeEventListener("scroll", close);
+        window.removeEventListener("resize", close);
+    } else {
+        window.removeEventListener("scroll", updatePosition);
+        window.removeEventListener("resize", updatePosition);
+    }
 });
 
 function close(): void {
@@ -212,11 +217,13 @@ function updatePosition() {
 .zia-popover {
     --popover-background-color: var(--color-background);
     --popover-border-radius: var(--forms-control-border-radius);
+    --popover-gap: 10px;
+    --popover-scale: 0.98;
 
     background-color: var(--popover-background-color);
     border: 1px solid var(--color-midground);
     border-radius: var(--popover-border-radius);
-    box-shadow: 0 0 14px light-dark(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1));
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     overflow: scroll;
     padding: 12px;
     position: fixed;
@@ -224,19 +231,19 @@ function updatePosition() {
     z-index: 1000;
 
     &.vertical-above {
-        margin-bottom: 10px;
+        margin-bottom: var(--popover-gap);
     }
 
     &.vertical-below {
-        margin-top: 10px;
+        margin-top: var(--popover-gap);
     }
 
     &.horizontal-outside-left {
-        margin-right: 10px;
+        margin-right: var(--popover-gap);
     }
 
     &.horizontal-outside-right {
-        margin-left: 10px;
+        margin-left: var(--popover-gap);
     }
 
     &.v-enter-active,
@@ -258,7 +265,7 @@ function updatePosition() {
         &.horizontal-left,
         &.horizontal-right,
         &.horizontal-center {
-            transform: scale(0.98);
+            transform: scale(var(--popover-scale));
         }
     }
 }

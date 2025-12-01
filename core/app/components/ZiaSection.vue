@@ -12,7 +12,7 @@ interface Props {
     padding?: "xl" | "lg" | "md" | "sm" | "xs" | "none";
 }
 
-withDefaults(defineProps<Props>(), { sticky: false, padding: "md" });
+const { sticky = false, padding = "md" } = defineProps<Props>();
 </script>
 
 <style lang="css">
