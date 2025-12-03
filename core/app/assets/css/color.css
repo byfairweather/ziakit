@@ -1,27 +1,25 @@
 :root {
-    --color-neutral-base: hsl(200, 0%, 50%);
-    --color-primary-base: hsl(200, 75%, 37%);
-    --color-secondary-base: hsl(270, 30%, 50%);
+    --color-neutral-base: hsl(0, 0%, 47%);
+    --color-brand-base: hsl(200, 72%, 42%);
     --color-success-base: hsl(84, 60%, 29%);
     --color-danger-base: hsl(10, 72%, 45%);
 
-    --color-shade-max-l: 96;
-    --color-shade-min-l: 4;
-    --color-shade-step-l-light: var(--color-shade-min-l) + (l - var(--color-shade-min-l)) / 5;
-    --color-shade-step-l-dark: l + (var(--color-shade-max-l) - l) / 5;
+    --color-shade-step-light: (92 - l) / 5;
+    --color-shade-step-dark: (l - 15) / 5;
 
-    --color-shade-0: h s calc(var(--color-shade-step-l-light) * 0);
-    --color-shade-1: h s calc(var(--color-shade-step-l-light) * 0.6);
-    --color-shade-2: h s calc(var(--color-shade-step-l-light) * 1.6);
-    --color-shade-3: h s calc(var(--color-shade-step-l-light) * 2.8);
-    --color-shade-4: h s calc(var(--color-shade-step-l-light) * 4);
+    --color-shade-0: h s calc(l - (var(--color-shade-step-dark) * 5));
+    --color-shade-1: h s calc(l - (var(--color-shade-step-dark) * 4));
+    --color-shade-2: h s calc(l - (var(--color-shade-step-dark) * 3));
+    --color-shade-3: h s calc(l - (var(--color-shade-step-dark) * 2));
+    --color-shade-4: h s calc(l - (var(--color-shade-step-dark) * 1));
     --color-shade-5: h s l;
-    --color-shade-6: h s calc(var(--color-shade-step-l-dark) * 1);
-    --color-shade-7: h s calc(var(--color-shade-step-l-dark) * 2.2);
-    --color-shade-8: h s calc(var(--color-shade-step-l-dark) * 3.4);
-    --color-shade-9: h s calc(var(--color-shade-step-l-dark) * 4.4);
-    --color-shade-10: h s calc(var(--color-shade-step-l-dark) * 5);
+    --color-shade-6: h s calc(l + (var(--color-shade-step-light) * 1));
+    --color-shade-7: h s calc(l + (var(--color-shade-step-light) * 2));
+    --color-shade-8: h s calc(l + (var(--color-shade-step-light) * 3));
+    --color-shade-9: h s calc(l + (var(--color-shade-step-light) * 4));
+    --color-shade-10: h s calc(l + (var(--color-shade-step-light) * 5));
 
+    --color-neutral-white: hsl(from var(--color-neutral-base) h s 100%);
     --color-neutral-0: hsl(from var(--color-neutral-base) var(--color-shade-0));
     --color-neutral-1: hsl(from var(--color-neutral-base) var(--color-shade-1));
     --color-neutral-2: hsl(from var(--color-neutral-base) var(--color-shade-2));
@@ -33,30 +31,19 @@
     --color-neutral-8: hsl(from var(--color-neutral-base) var(--color-shade-8));
     --color-neutral-9: hsl(from var(--color-neutral-base) var(--color-shade-9));
     --color-neutral-10: hsl(from var(--color-neutral-base) var(--color-shade-10));
+    --color-neutral-black: hsl(from var(--color-neutral-base) h s 10%);
 
-    --color-primary-0: hsl(from var(--color-primary-base) var(--color-shade-0));
-    --color-primary-1: hsl(from var(--color-primary-base) var(--color-shade-1));
-    --color-primary-2: hsl(from var(--color-primary-base) var(--color-shade-2));
-    --color-primary-3: hsl(from var(--color-primary-base) var(--color-shade-3));
-    --color-primary-4: hsl(from var(--color-primary-base) var(--color-shade-4));
-    --color-primary-5: hsl(from var(--color-primary-base) var(--color-shade-5));
-    --color-primary-6: hsl(from var(--color-primary-base) var(--color-shade-6));
-    --color-primary-7: hsl(from var(--color-primary-base) var(--color-shade-7));
-    --color-primary-8: hsl(from var(--color-primary-base) var(--color-shade-8));
-    --color-primary-9: hsl(from var(--color-primary-base) var(--color-shade-9));
-    --color-primary-10: hsl(from var(--color-primary-base) var(--color-shade-10));
-
-    --color-secondary-0: hsl(from var(--color-secondary-base) var(--color-shade-0));
-    --color-secondary-1: hsl(from var(--color-secondary-base) var(--color-shade-1));
-    --color-secondary-2: hsl(from var(--color-secondary-base) var(--color-shade-2));
-    --color-secondary-3: hsl(from var(--color-secondary-base) var(--color-shade-3));
-    --color-secondary-4: hsl(from var(--color-secondary-base) var(--color-shade-4));
-    --color-secondary-5: hsl(from var(--color-secondary-base) var(--color-shade-5));
-    --color-secondary-6: hsl(from var(--color-secondary-base) var(--color-shade-6));
-    --color-secondary-7: hsl(from var(--color-secondary-base) var(--color-shade-7));
-    --color-secondary-8: hsl(from var(--color-secondary-base) var(--color-shade-8));
-    --color-secondary-9: hsl(from var(--color-secondary-base) var(--color-shade-9));
-    --color-secondary-10: hsl(from var(--color-secondary-base) var(--color-shade-10));
+    --color-brand-0: hsl(from var(--color-brand-base) var(--color-shade-0));
+    --color-brand-1: hsl(from var(--color-brand-base) var(--color-shade-1));
+    --color-brand-2: hsl(from var(--color-brand-base) var(--color-shade-2));
+    --color-brand-3: hsl(from var(--color-brand-base) var(--color-shade-3));
+    --color-brand-4: hsl(from var(--color-brand-base) var(--color-shade-4));
+    --color-brand-5: hsl(from var(--color-brand-base) var(--color-shade-5));
+    --color-brand-6: hsl(from var(--color-brand-base) var(--color-shade-6));
+    --color-brand-7: hsl(from var(--color-brand-base) var(--color-shade-7));
+    --color-brand-8: hsl(from var(--color-brand-base) var(--color-shade-8));
+    --color-brand-9: hsl(from var(--color-brand-base) var(--color-shade-9));
+    --color-brand-10: hsl(from var(--color-brand-base) var(--color-shade-10));
 
     --color-success-0: hsl(from var(--color-success-base) var(--color-shade-0));
     --color-success-1: hsl(from var(--color-success-base) var(--color-shade-1));
@@ -89,235 +76,4 @@
 
 .color-mode-light {
     color-scheme: light;
-}
-
-.color-theme-default {
-    .color-palette-neutral,
-    .color-palette-neutral &,
-    &.color-palette-neutral {
-        --color-background: light-dark(var(--color-neutral-10), var(--color-neutral-1));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-2));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-neutral-9), var(--color-neutral-2));
-        --color-midground-accent: light-dark(var(--color-neutral-8), var(--color-neutral-3));
-        --color-foreground-accent: light-dark(var(--color-neutral-2), var(--color-neutral-8));
-        --color-foreground-accent-inverted: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-        --color-midground-accent-inverted: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-        --color-background-accent-inverted: light-dark(var(--color-neutral-2), var(--color-neutral-8));
-    }
-
-    .color-palette-primary,
-    .color-palette-primary &,
-    &.color-palette-primary {
-        --color-background: light-dark(var(--color-neutral-10), var(--color-neutral-1));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-2));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-primary-9), var(--color-primary-2));
-        --color-midground-accent: light-dark(var(--color-primary-8), var(--color-primary-3));
-        --color-foreground-accent: light-dark(var(--color-primary-5), var(--color-primary-6));
-        --color-midground-accent-inverted: light-dark(var(--color-primary-10), var(--color-primary-0));
-        --color-midground-accent-inverted: light-dark(var(--color-primary-1), var(--color-primary-9));
-        --color-background-accent-inverted: light-dark(var(--color-primary-3), var(--color-primary-7));
-    }
-
-    .color-palette-secondary,
-    .color-palette-secondary &,
-    &.color-palette-secondary {
-        --color-background: light-dark(var(--color-neutral-10), var(--color-neutral-1));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-2));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-secondary-9), var(--color-secondary-2));
-        --color-midground-accent: light-dark(var(--color-secondary-8), var(--color-secondary-3));
-        --color-foreground-accent: light-dark(var(--color-secondary-5), var(--color-secondary-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-secondary-10), var(--color-secondary-0));
-        --color-midground-accent-inverted: light-dark(var(--color-secondary-1), var(--color-secondary-9));
-        --color-background-accent-inverted: light-dark(var(--color-secondary-3), var(--color-secondary-7));
-    }
-
-    .color-palette-success,
-    .color-palette-success &,
-    &.color-palette-success {
-        --color-background: light-dark(var(--color-neutral-10), var(--color-neutral-1));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-2));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-success-9), var(--color-success-1));
-        --color-midground-accent: light-dark(var(--color-success-8), var(--color-success-2));
-        --color-foreground-accent: light-dark(var(--color-success-5), var(--color-success-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-success-10), var(--color-success-0));
-        --color-midground-accent-inverted: light-dark(var(--color-success-1), var(--color-success-9));
-        --color-background-accent-inverted: light-dark(var(--color-success-3), var(--color-success-7));
-    }
-
-    .color-palette-danger,
-    .color-palette-danger &,
-    &.color-palette-danger {
-        --color-background: light-dark(var(--color-neutral-10), var(--color-neutral-1));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-2));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-danger-9), var(--color-danger-1));
-        --color-midground-accent: light-dark(var(--color-danger-8), var(--color-danger-2));
-        --color-foreground-accent: light-dark(var(--color-danger-5), var(--color-danger-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-danger-10), var(--color-danger-0));
-        --color-midground-accent-inverted: light-dark(var(--color-danger-1), var(--color-danger-9));
-        --color-background-accent-inverted: light-dark(var(--color-danger-3), var(--color-danger-7));
-    }
-}
-
-.color-theme-soft {
-    .color-palette-neutral,
-    .color-palette-neutral &,
-    &.color-palette-neutral {
-        --color-background: light-dark(var(--color-neutral-9), var(--color-neutral-2));
-        --color-midground: light-dark(var(--color-neutral-8), var(--color-neutral-3));
-        --color-foreground: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-
-        --color-background-accent: light-dark(var(--color-neutral-8), var(--color-neutral-3));
-        --color-midground-accent: light-dark(var(--color-neutral-7), var(--color-neutral-4));
-        --color-foreground-accent: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-        --color-foreground-accent-inverted: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-        --color-midground-accent-inverted: light-dark(var(--color-neutral-0), var(--color-neutral-10));
-        --color-background-accent-inverted: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-    }
-
-    .color-palette-primary,
-    .color-palette-primary &,
-    &.color-palette-primary {
-        --color-background: light-dark(var(--color-primary-9), var(--color-primary-1));
-        --color-midground: light-dark(var(--color-primary-8), var(--color-primary-2));
-        --color-foreground: light-dark(var(--color-primary-1), var(--color-primary-9));
-
-        --color-background-accent: light-dark(var(--color-primary-8), var(--color-primary-2));
-        --color-midground-accent: light-dark(var(--color-primary-7), var(--color-primary-3));
-        --color-foreground-accent: light-dark(var(--color-primary-4), var(--color-primary-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-primary-10), var(--color-primary-0));
-        --color-midground-accent-inverted: light-dark(var(--color-primary-1), var(--color-primary-9));
-        --color-background-accent-inverted: light-dark(var(--color-primary-2), var(--color-primary-8));
-    }
-
-    .color-palette-secondary,
-    .color-palette-secondary &,
-    &.color-palette-secondary {
-        --color-background: light-dark(var(--color-secondary-9), var(--color-secondary-1));
-        --color-midground: light-dark(var(--color-secondary-8), var(--color-secondary-2));
-        --color-foreground: light-dark(var(--color-secondary-1), var(--color-secondary-9));
-
-        --color-background-accent: light-dark(var(--color-secondary-8), var(--color-secondary-2));
-        --color-midground-accent: light-dark(var(--color-secondary-7), var(--color-secondary-3));
-        --color-foreground-accent: light-dark(var(--color-secondary-4), var(--color-secondary-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-secondary-10), var(--color-secondary-0));
-        --color-midground-accent-inverted: light-dark(var(--color-secondary-1), var(--color-secondary-9));
-        --color-background-accent-inverted: light-dark(var(--color-secondary-2), var(--color-secondary-8));
-    }
-
-    .color-palette-success,
-    .color-palette-success &,
-    &.color-palette-success {
-        --color-background: light-dark(var(--color-success-9), var(--color-success-1));
-        --color-midground: light-dark(var(--color-success-8), var(--color-success-2));
-        --color-foreground: light-dark(var(--color-success-1), var(--color-success-9));
-
-        --color-background-accent: light-dark(var(--color-success-8), var(--color-success-2));
-        --color-midground-accent: light-dark(var(--color-success-7), var(--color-success-3));
-        --color-foreground-accent: light-dark(var(--color-success-4), var(--color-success-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-success-10), var(--color-success-0));
-        --color-midground-accent-inverted: light-dark(var(--color-success-1), var(--color-success-9));
-        --color-background-accent-inverted: light-dark(var(--color-success-2), var(--color-success-8));
-    }
-
-    .color-palette-danger,
-    .color-palette-danger &,
-    &.color-palette-danger {
-        --color-background: light-dark(var(--color-danger-9), var(--color-danger-1));
-        --color-midground: light-dark(var(--color-danger-8), var(--color-danger-2));
-        --color-foreground: light-dark(var(--color-danger-1), var(--color-danger-9));
-
-        --color-background-accent: light-dark(var(--color-danger-8), var(--color-danger-2));
-        --color-midground-accent: light-dark(var(--color-danger-7), var(--color-danger-3));
-        --color-foreground-accent: light-dark(var(--color-danger-4), var(--color-danger-6));
-        --color-foreground-accent-inverted: light-dark(var(--color-danger-10), var(--color-danger-0));
-        --color-midground-accent-inverted: light-dark(var(--color-danger-1), var(--color-danger-9));
-        --color-background-accent-inverted: light-dark(var(--color-danger-2), var(--color-danger-8));
-    }
-}
-
-.color-theme-bold {
-    .color-palette-neutral,
-    .color-palette-neutral &,
-    &.color-palette-neutral {
-        --color-background: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-        --color-midground: light-dark(var(--color-neutral-2), var(--color-neutral-8));
-        --color-foreground: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-
-        --color-background-accent: light-dark(var(--color-neutral-2), var(--color-neutral-8));
-        --color-midground-accent: light-dark(var(--color-neutral-3), var(--color-neutral-7));
-        --color-foreground-accent: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-        --color-foreground-accent-inverted: light-dark(var(--color-neutral-1), var(--color-neutral-9));
-        --color-midground-accent-inverted: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-        --color-background-accent-inverted: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-    }
-
-    .color-palette-primary,
-    .color-palette-primary &,
-    &.color-palette-primary {
-        --color-background: light-dark(var(--color-primary-5), var(--color-primary-5));
-        --color-midground: light-dark(var(--color-primary-4), var(--color-primary-4));
-        --color-foreground: light-dark(var(--color-primary-10), var(--color-primary-10));
-
-        --color-background-accent: light-dark(var(--color-primary-4), var(--color-primary-4));
-        --color-midground-accent: light-dark(var(--color-primary-3), var(--color-primary-3));
-        --color-foreground-accent: light-dark(var(--color-primary-10), var(--color-primary-10));
-        --color-foreground-accent-inverted: light-dark(var(--color-primary-5), var(--color-primary-5));
-        --color-midground-accent-inverted: light-dark(var(--color-primary-10), var(--color-primary-10));
-        --color-background-accent-inverted: light-dark(var(--color-primary-10), var(--color-primary-10));
-    }
-
-    .color-palette-secondary,
-    .color-palette-secondary &,
-    &.color-palette-secondary {
-        --color-background: light-dark(var(--color-secondary-5), var(--color-secondary-5));
-        --color-midground: light-dark(var(--color-secondary-4), var(--color-secondary-4));
-        --color-foreground: light-dark(var(--color-secondary-10), var(--color-secondary-10));
-
-        --color-background-accent: light-dark(var(--color-secondary-4), var(--color-secondary-4));
-        --color-midground-accent: light-dark(var(--color-secondary-3), var(--color-secondary-3));
-        --color-foreground-accent: light-dark(var(--color-secondary-10), var(--color-secondary-10));
-        --color-foreground-accent-inverted: light-dark(var(--color-secondary-5), var(--color-secondary-5));
-        --color-midground-accent-inverted: light-dark(var(--color-secondary-10), var(--color-secondary-10));
-        --color-background-accent-inverted: light-dark(var(--color-secondary-10), var(--color-secondary-10));
-    }
-
-    .color-palette-success,
-    .color-palette-success &,
-    &.color-palette-success {
-        --color-background: light-dark(var(--color-success-5), var(--color-success-5));
-        --color-midground: light-dark(var(--color-success-4), var(--color-success-4));
-        --color-foreground: light-dark(var(--color-success-10), var(--color-success-10));
-
-        --color-background-accent: light-dark(var(--color-success-4), var(--color-success-4));
-        --color-midground-accent: light-dark(var(--color-success-3), var(--color-success-3));
-        --color-foreground-accent: light-dark(var(--color-success-10), var(--color-success-10));
-        --color-foreground-accent-inverted: light-dark(var(--color-success-5), var(--color-success-5));
-        --color-midground-accent-inverted: light-dark(var(--color-success-10), var(--color-success-10));
-        --color-background-accent-inverted: light-dark(var(--color-success-10), var(--color-success-10));
-    }
-
-    .color-palette-danger,
-    .color-palette-danger &,
-    &.color-palette-danger {
-        --color-background: light-dark(var(--color-danger-5), var(--color-danger-5));
-        --color-midground: light-dark(var(--color-danger-4), var(--color-danger-4));
-        --color-foreground: light-dark(var(--color-danger-10), var(--color-danger-10));
-
-        --color-background-accent: light-dark(var(--color-danger-4), var(--color-danger-4));
-        --color-midground-accent: light-dark(var(--color-danger-3), var(--color-danger-3));
-        --color-foreground-accent: light-dark(var(--color-danger-10), var(--color-danger-10));
-        --color-foreground-accent-inverted: light-dark(var(--color-danger-5), var(--color-danger-5));
-        --color-midground-accent-inverted: light-dark(var(--color-danger-10), var(--color-danger-10));
-        --color-background-accent-inverted: light-dark(var(--color-danger-10), var(--color-danger-10));
-    }
 }

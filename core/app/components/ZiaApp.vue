@@ -8,7 +8,7 @@
 .zia-app {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
+    min-height: 100dvh;
+    width: 100dvw;
 }
 </style>

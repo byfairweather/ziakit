@@ -215,15 +215,14 @@ function updatePosition() {
 
 <style lang="css">
 .zia-popover {
-    --popover-background-color: var(--color-background);
+    --popover-background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
     --popover-border-radius: var(--forms-control-border-radius);
     --popover-gap: 10px;
     --popover-scale: 0.98;
 
     background-color: var(--popover-background-color);
-    border: 1px solid var(--color-midground);
+    border: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
     border-radius: var(--popover-border-radius);
-    box-shadow: 0 0 14px rgba(0, 0, 0, 0.3);
     overflow: scroll;
     padding: 12px;
     position: fixed;

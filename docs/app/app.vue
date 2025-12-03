@@ -3,16 +3,17 @@
         <ZiaSection :sticky="true" padding="sm" class="color-theme-default color-palette-neutral">
             <ZiaNavigation>
                 <template #logo>
-                    <ZiaButton variant="tertiary">Logo</ZiaButton>
+                    <ZiaButton variant="tertiary" color="neutral">Logo</ZiaButton>
                 </template>
                 <template #left>
                     <ZiaButtonGroup gap="spaced">
-                        <ZiaButton variant="tertiary">Products</ZiaButton>
-                        <ZiaButton variant="tertiary">News</ZiaButton>
-                        <ZiaButton variant="tertiary">Blog</ZiaButton>
-                        <ZiaButton variant="tertiary">Contact</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Products</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">News</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Contact</ZiaButton>
                         <ZiaButton
                             variant="tertiary"
+                            color="neutral"
                             @click="
                                 () => {
                                     console.log('wow');
@@ -24,17 +25,17 @@
                 </template>
                 <template #right>
                     <ZiaButtonGroup gap="spaced">
-                        <ZiaButton variant="tertiary">Cart</ZiaButton>
-                        <ZiaButton variant="tertiary">Sign In</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Cart</ZiaButton>
+                        <ZiaButton variant="primary" color="neutral">Sign In</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
                 <template #mobile>
                     <ZiaButtonGroup gap="spaced" orientation="vertical">
-                        <ZiaButton variant="tertiary">Products</ZiaButton>
-                        <ZiaButton variant="tertiary">News</ZiaButton>
-                        <ZiaButton variant="tertiary">Blog</ZiaButton>
-                        <ZiaButton variant="tertiary">Contact</ZiaButton>
-                        <ZiaButton variant="tertiary">About Us</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Products</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">News</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">Contact</ZiaButton>
+                        <ZiaButton variant="tertiary" color="neutral">About Us</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
             </ZiaNavigation>
@@ -58,31 +59,17 @@
                 </tr>
                 <tr class="color-palette-primary">
                     <th>Primary</th>
-                    <td style="background-color: var(--color-primary-0)">0</td>
-                    <td style="background-color: var(--color-primary-1)">1</td>
-                    <td style="background-color: var(--color-primary-2)">2</td>
-                    <td style="background-color: var(--color-primary-3)">3</td>
-                    <td style="background-color: var(--color-primary-4)">4</td>
-                    <td style="background-color: var(--color-primary-5)">5</td>
-                    <td style="background-color: var(--color-primary-6)">6</td>
-                    <td style="background-color: var(--color-primary-7)">7</td>
-                    <td style="background-color: var(--color-primary-8)">8</td>
-                    <td style="background-color: var(--color-primary-9)">9</td>
-                    <td style="background-color: var(--color-primary-10)">10</td>
-                </tr>
-                <tr class="color-palette-secondary">
-                    <th>Secondary</th>
-                    <td style="background-color: var(--color-secondary-0)">0</td>
-                    <td style="background-color: var(--color-secondary-1)">1</td>
-                    <td style="background-color: var(--color-secondary-2)">2</td>
-                    <td style="background-color: var(--color-secondary-3)">3</td>
-                    <td style="background-color: var(--color-secondary-4)">4</td>
-                    <td style="background-color: var(--color-secondary-5)">5</td>
-                    <td style="background-color: var(--color-secondary-6)">6</td>
-                    <td style="background-color: var(--color-secondary-7)">7</td>
-                    <td style="background-color: var(--color-secondary-8)">8</td>
-                    <td style="background-color: var(--color-secondary-9)">9</td>
-                    <td style="background-color: var(--color-secondary-10)">10</td>
+                    <td style="background-color: var(--color-brand-0)">0</td>
+                    <td style="background-color: var(--color-brand-1)">1</td>
+                    <td style="background-color: var(--color-brand-2)">2</td>
+                    <td style="background-color: var(--color-brand-3)">3</td>
+                    <td style="background-color: var(--color-brand-4)">4</td>
+                    <td style="background-color: var(--color-brand-5)">5</td>
+                    <td style="background-color: var(--color-brand-6)">6</td>
+                    <td style="background-color: var(--color-brand-7)">7</td>
+                    <td style="background-color: var(--color-brand-8)">8</td>
+                    <td style="background-color: var(--color-brand-9)">9</td>
+                    <td style="background-color: var(--color-brand-10)">10</td>
                 </tr>
                 <tr class="color-palette-success">
                     <th>Success</th>
@@ -113,55 +100,9 @@
                     <td style="background-color: var(--color-danger-10)">10</td>
                 </tr>
             </table>
-            <table class="colors" ref="colors">
-                <tr style="background-color: var(--color-background); color: var(--color-foreground)">
-                    <th>Foreground</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-                <tr style="background-color: var(--color-midground); color: var(--color-foreground)">
-                    <th>Midground</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-                <tr style="background-color: var(--color-background); color: var(--color-foreground-accent)">
-                    <th>Foreground Accent</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-                <tr
-                    style="
-                        background-color: var(--color-midground-accent);
-                        color: var(--color-midground-accent-inverted);
-                    "
-                >
-                    <th>Midground Accent</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-                <tr
-                    style="
-                        background-color: var(--color-background-accent);
-                        color: var(--color-background-accent-inverted);
-                    "
-                >
-                    <th>Background Accent</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-                <tr
-                    style="
-                        background-color: var(--color-foreground-accent);
-                        color: var(--color-foreground-accent-inverted);
-                    "
-                >
-                    <th>Foreground Accent Inverted</th>
-                    <td>█ Lorem ipsum dolor sit amet</td>
-                    <td></td>
-                </tr>
-            </table>
         </ZiaSection>
         <ZiaSection>
+            <h1>Color Mode</h1>
             <ZiaButtonGroup orientation="horizontal">
                 <ZiaButton :variant="scheme == 'dark' ? 'primary' : 'secondary'" @click="scheme = 'dark'"
                     >Dark</ZiaButton
@@ -170,40 +111,14 @@
                     >Light</ZiaButton
                 >
             </ZiaButtonGroup>
-            <br />
-            <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton :variant="palette == 'neutral' ? 'primary' : 'secondary'" @click="palette = 'neutral'"
-                    >Neutral</ZiaButton
-                >
-                <ZiaButton :variant="palette == 'primary' ? 'primary' : 'secondary'" @click="palette = 'primary'"
-                    >Primary</ZiaButton
-                >
-                <ZiaButton :variant="palette == 'secondary' ? 'primary' : 'secondary'" @click="palette = 'secondary'"
-                    >Secondary</ZiaButton
-                >
-                <ZiaButton :variant="palette == 'success' ? 'primary' : 'secondary'" @click="palette = 'success'"
-                    >Success</ZiaButton
-                >
-                <ZiaButton :variant="palette == 'danger' ? 'primary' : 'secondary'" @click="palette = 'danger'"
-                    >Danger</ZiaButton
-                >
-            </ZiaButtonGroup>
-            <br />
-            <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton :variant="theme == 'default' ? 'primary' : 'secondary'" @click="theme = 'default'"
-                    >Default</ZiaButton
-                >
-                <ZiaButton :variant="theme == 'soft' ? 'primary' : 'secondary'" @click="theme = 'soft'">Soft</ZiaButton>
-                <ZiaButton :variant="theme == 'bold' ? 'primary' : 'secondary'" @click="theme = 'bold'">Bold</ZiaButton>
-            </ZiaButtonGroup>
         </ZiaSection>
         <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
             <h1>Buttons</h1>
             <ZiaButtonGroup orientation="horizontal" gap="spaced">
-                <ZiaButton variant="primary">Primary</ZiaButton>
-                <ZiaButton variant="secondary">Secondary</ZiaButton>
-                <ZiaButton variant="tertiary">Tertiary</ZiaButton>
-                <ZiaButton class="color-theme-default color-palette-danger" variant="primary">Override</ZiaButton>
+                <ZiaButton variant="primary" color="neutral">Primary</ZiaButton>
+                <ZiaButton variant="secondary" color="neutral">Secondary</ZiaButton>
+                <ZiaButton variant="tertiary" color="neutral">Tertiary</ZiaButton>
+                <ZiaButton variant="primary" color="neutral">Override</ZiaButton>
             </ZiaButtonGroup>
         </ZiaSection>
         <ZiaSection>
@@ -367,6 +282,9 @@
                 <h1>Heading 1</h1>
             </ZiaPopover>
             <br /><br />
+        </ZiaSection>
+        <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
+            <ZiaInput placeholder="Placeholder" style="width: 200px" />
         </ZiaSection>
         <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
             <h1>

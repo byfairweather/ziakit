@@ -36,7 +36,7 @@ const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
             & > .zia-button:not(:last-child) {
                 border-bottom-right-radius: 0;
                 border-top-right-radius: 0;
-                margin-right: calc(var(--button-border-width) * -1);
+                margin-right: calc(var(--button--border-width) * -1);
             }
         }
 

@@ -17,8 +17,8 @@ const { sticky = false, padding = "md" } = defineProps<Props>();
 
 <style lang="css">
 .zia-section {
-    --section-background-color: var(--color-background);
-    --section-color: var(--color-foreground);
+    --section-background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --section-color: light-dark(var(--color-neutral-black), var(--color-neutral-white));
     --section-padding-xs: 10px;
     --section-padding-sm: 15px;
     --section-padding-md: 20px;
@@ -37,7 +37,7 @@ const { sticky = false, padding = "md" } = defineProps<Props>();
     }
 
     &.sticky {
-        box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
         position: sticky;
         top: 0;
         z-index: 10;
