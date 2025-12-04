@@ -11,11 +11,11 @@
 
 html {
     interpolate-size: allow-keywords;
+    overscroll-behavior: none;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
-    overscroll-behavior: none;
 }
 
 img,

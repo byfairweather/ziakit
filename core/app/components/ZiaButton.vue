@@ -10,67 +10,66 @@ interface Props {
     color?: "neutral" | "brand" | "success" | "danger";
 }
 
-const { variant = "primary", color = "brand" } = defineProps<Props>();
+const { variant = "primary", color = "neutral" } = defineProps<Props>();
 </script>
 
 <style lang="css">
 .zia-button {
     --button--animation-duration-enter: var(--animation-duration-smooth);
     --button--animation-duration-exit: var(--animation-duration-smooth);
-    --button--border-radius: var(--forms-control-border-radius);
-    --button--border-width: var(--forms-control-border-width);
+    --button--border-radius: var(--form-control--border-radius);
+    --button--border-width: var(--form-control--border-width);
     --button--disabled-opacity: 30%;
-    --button--height: var(--forms-control-height);
-    --button--padding: var(--forms-control-padding);
+    --button--padding: var(--form-control--padding);
 
-    --button-primary-neutral-default--background-color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
+    --button-primary-neutral-default--background-color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
     --button-primary-neutral-default--border-color: transparent;
     --button-primary-neutral-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
     --button-primary-neutral-hover--background-color: light-dark(var(--color-neutral-1), var(--color-neutral-9));
     --button-primary-neutral-hover--border-color: transparent;
     --button-primary-neutral-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-neutral-active--background-color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
+    --button-primary-neutral-active--background-color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
     --button-primary-neutral-active--border-color: transparent;
     --button-primary-neutral-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
 
     --button-primary-brand-default--background-color: light-dark(var(--color-brand-5), var(--color-brand-5));
     --button-primary-brand-default--border-color: transparent;
-    --button-primary-brand-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-brand-hover--background-color: light-dark(var(--color-brand-4), var(--color-brand-6));
+    --button-primary-brand-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-brand-hover--background-color: light-dark(var(--color-brand-6), var(--color-brand-4));
     --button-primary-brand-hover--border-color: transparent;
-    --button-primary-brand-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-brand-active--background-color: light-dark(var(--color-brand-3), var(--color-brand-7));
+    --button-primary-brand-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-brand-active--background-color: light-dark(var(--color-brand-7), var(--color-brand-3));
     --button-primary-brand-active--border-color: transparent;
-    --button-primary-brand-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --button-primary-brand-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
 
     --button-primary-success-default--background-color: light-dark(var(--color-success-5), var(--color-success-5));
     --button-primary-success-default--border-color: transparent;
-    --button-primary-success-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-success-hover--background-color: light-dark(var(--color-success-4), var(--color-success-6));
+    --button-primary-success-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-success-hover--background-color: light-dark(var(--color-success-6), var(--color-success-4));
     --button-primary-success-hover--border-color: transparent;
-    --button-primary-success-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-success-active--background-color: light-dark(var(--color-success-3), var(--color-success-7));
+    --button-primary-success-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-success-active--background-color: light-dark(var(--color-success-7), var(--color-success-3));
     --button-primary-success-active--border-color: transparent;
-    --button-primary-success-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --button-primary-success-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
 
     --button-primary-danger-default--background-color: light-dark(var(--color-danger-5), var(--color-danger-5));
     --button-primary-danger-default--border-color: transparent;
-    --button-primary-danger-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-danger-hover--background-color: light-dark(var(--color-danger-4), var(--color-danger-6));
+    --button-primary-danger-default--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-danger-hover--background-color: light-dark(var(--color-danger-6), var(--color-danger-4));
     --button-primary-danger-hover--border-color: transparent;
-    --button-primary-danger-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --button-primary-danger-active--background-color: light-dark(var(--color-danger-3), var(--color-danger-7));
+    --button-primary-danger-hover--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
+    --button-primary-danger-active--background-color: light-dark(var(--color-danger-7), var(--color-danger-3));
     --button-primary-danger-active--border-color: transparent;
-    --button-primary-danger-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --button-primary-danger-active--color: light-dark(var(--color-neutral-white), var(--color-neutral-white));
 
     --button-secondary-neutral-default--background-color: transparent;
-    --button-secondary-neutral-default--border-color: light-dark(var(--color-neutral-5), var(--color-neutral-5));
-    --button-secondary-neutral-default--color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
+    --button-secondary-neutral-default--border-color: light-dark(var(--color-neutral-8), var(--color-neutral-2));
+    --button-secondary-neutral-default--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
     --button-secondary-neutral-hover--background-color: light-dark(var(--color-neutral-10), var(--color-neutral-0));
-    --button-secondary-neutral-hover--border-color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
-    --button-secondary-neutral-hover--color: light-dark(var(--color-neutral-1), var(--color-neutral-9));
+    --button-secondary-neutral-hover--border-color: light-dark(var(--color-neutral-5), var(--color-neutral-5));
+    --button-secondary-neutral-hover--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
     --button-secondary-neutral-active--background-color: light-dark(var(--color-neutral-9), var(--color-neutral-1));
-    --button-secondary-neutral-active--border-color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
+    --button-secondary-neutral-active--border-color: light-dark(var(--color-neutral-5), var(--color-neutral-5));
     --button-secondary-neutral-active--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
 
     --button-secondary-brand-default--background-color: transparent;
@@ -105,10 +104,10 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
 
     --button-tertiary-neutral-default--background-color: transparent;
     --button-tertiary-neutral-default--border-color: transparent;
-    --button-tertiary-neutral-default--color: light-dark(var(--color-neutral-2), var(--color-neutral-8));
+    --button-tertiary-neutral-default--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
     --button-tertiary-neutral-hover--background-color: light-dark(var(--color-neutral-10), var(--color-neutral-0));
     --button-tertiary-neutral-hover--border-color: transparent;
-    --button-tertiary-neutral-hover--color: light-dark(var(--color-neutral-1), var(--color-neutral-9));
+    --button-tertiary-neutral-hover--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
     --button-tertiary-neutral-active--background-color: light-dark(var(--color-neutral-9), var(--color-neutral-1));
     --button-tertiary-neutral-active--border-color: transparent;
     --button-tertiary-neutral-active--color: light-dark(var(--color-neutral-0), var(--color-neutral-10));
@@ -150,7 +149,6 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
     box-sizing: border-box;
     cursor: pointer;
     display: flex;
-    font-weight: 600;
     justify-content: center;
     outline: none;
     padding: var(--button--padding);
@@ -164,13 +162,16 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
         transition: all var(--button--animation-duration-enter) ease-in-out;
     }
 
+    &:active {
+        transform: scale(0.98);
+    }
+
     &:disabled {
         opacity: var(--button--disabled-opacity);
         pointer-events: none;
     }
 
     &.variant-primary {
-        &,
         &.color-neutral {
             background-color: var(--button-primary-neutral-default--background-color);
             border-color: var(--button-primary-neutral-default--border-color);
@@ -181,6 +182,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-primary-neutral-hover--border-color);
                 color: var(--button-primary-neutral-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-primary-neutral-active--background-color);
@@ -199,6 +201,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-primary-brand-hover--border-color);
                 color: var(--button-primary-brand-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-primary-brand-active--background-color);
@@ -217,6 +220,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-primary-success-hover--border-color);
                 color: var(--button-primary-success-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-primary-success-active--background-color);
@@ -235,6 +239,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-primary-danger-hover--border-color);
                 color: var(--button-primary-danger-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-primary-danger-active--background-color);
@@ -245,7 +250,6 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
     }
 
     &.variant-secondary {
-        &,
         &.color-neutral {
             background-color: var(--button-secondary-neutral-default--background-color);
             border-color: var(--button-secondary-neutral-default--border-color);
@@ -256,6 +260,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-secondary-neutral-hover--border-color);
                 color: var(--button-secondary-neutral-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-secondary-neutral-active--background-color);
@@ -274,6 +279,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-secondary-brand-hover--border-color);
                 color: var(--button-secondary-brand-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-secondary-brand-active--background-color);
@@ -292,6 +298,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-secondary-success-hover--border-color);
                 color: var(--button-secondary-success-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-secondary-success-active--background-color);
@@ -310,6 +317,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-secondary-danger-hover--border-color);
                 color: var(--button-secondary-danger-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-secondary-danger-active--background-color);
@@ -320,7 +328,6 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
     }
 
     &.variant-tertiary {
-        &,
         &.color-neutral {
             background-color: var(--button-tertiary-neutral-default--background-color);
             border-color: var(--button-tertiary-neutral-default--border-color);
@@ -331,6 +338,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-tertiary-neutral-hover--border-color);
                 color: var(--button-tertiary-neutral-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-tertiary-neutral-active--background-color);
@@ -349,6 +357,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-tertiary-brand-hover--border-color);
                 color: var(--button-tertiary-brand-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-tertiary-brand-active--background-color);
@@ -367,6 +376,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-tertiary-success-hover--border-color);
                 color: var(--button-tertiary-success-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-tertiary-success-active--background-color);
@@ -385,6 +395,7 @@ const { variant = "primary", color = "brand" } = defineProps<Props>();
                 border-color: var(--button-tertiary-danger-hover--border-color);
                 color: var(--button-tertiary-danger-hover--color);
             }
+
             &:active,
             &:focus-visible {
                 background-color: var(--button-tertiary-danger-active--background-color);

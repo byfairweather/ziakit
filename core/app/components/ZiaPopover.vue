@@ -215,34 +215,35 @@ function updatePosition() {
 
 <style lang="css">
 .zia-popover {
-    --popover-background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --popover-border-radius: var(--forms-control-border-radius);
-    --popover-gap: 10px;
-    --popover-scale: 0.98;
+    --popover--background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
+    --popover--border: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
+    --popover--border-radius: var(--forms-control-border-radius);
+    --popover--padding: 12px;
+    --popover--gap: 10px;
+    --popover--scale: 0.98;
 
-    background-color: var(--popover-background-color);
-    border: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
-    border-radius: var(--popover-border-radius);
+    background-color: var(--popover--background-color);
+    border: var(--popover--border);
+    border-radius: var(--popover--border-radius);
     overflow: scroll;
-    padding: 12px;
+    padding: var(--popover--padding);
     position: fixed;
-    text-align: center;
     z-index: 1000;
 
     &.vertical-above {
-        margin-bottom: var(--popover-gap);
+        margin-bottom: var(--popover--gap);
     }
 
     &.vertical-below {
-        margin-top: var(--popover-gap);
+        margin-top: var(--popover--gap);
     }
 
     &.horizontal-outside-left {
-        margin-right: var(--popover-gap);
+        margin-right: var(--popover--gap);
     }
 
     &.horizontal-outside-right {
-        margin-left: var(--popover-gap);
+        margin-left: var(--popover--gap);
     }
 
     &.v-enter-active,
@@ -264,7 +265,7 @@ function updatePosition() {
         &.horizontal-left,
         &.horizontal-right,
         &.horizontal-center {
-            transform: scale(var(--popover-scale));
+            transform: scale(var(--popover--scale));
         }
     }
 }

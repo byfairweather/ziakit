@@ -1,11 +1,11 @@
 :root {
     --color-neutral-base: hsl(0, 0%, 47%);
-    --color-brand-base: hsl(200, 72%, 42%);
-    --color-success-base: hsl(84, 60%, 29%);
+    --color-brand-base: hsl(200, 73%, 47%);
+    --color-success-base: hsl(84, 56%, 42%);
     --color-danger-base: hsl(10, 72%, 45%);
 
-    --color-shade-step-light: (92 - l) / 5;
-    --color-shade-step-dark: (l - 15) / 5;
+    --color-shade-step-light: (94 - l) / 5;
+    --color-shade-step-dark: (l - 14) / 5;
 
     --color-shade-0: h s calc(l - (var(--color-shade-step-dark) * 5));
     --color-shade-1: h s calc(l - (var(--color-shade-step-dark) * 4));

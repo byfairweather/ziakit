@@ -1,19 +1,18 @@
 <template>
     <ZiaApp :class="[`color-mode-${scheme}`]">
-        <ZiaSection :sticky="true" padding="sm" class="color-theme-default color-palette-neutral">
+        <ZiaSection :sticky="true" padding="sm">
             <ZiaNavigation>
                 <template #logo>
                     <ZiaButton variant="tertiary" color="neutral">Logo</ZiaButton>
                 </template>
                 <template #left>
                     <ZiaButtonGroup gap="spaced">
-                        <ZiaButton variant="tertiary" color="neutral">Products</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">News</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">Blog</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">Contact</ZiaButton>
+                        <ZiaButton variant="tertiary">Products</ZiaButton>
+                        <ZiaButton variant="tertiary">News</ZiaButton>
+                        <ZiaButton variant="tertiary">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary">Contact</ZiaButton>
                         <ZiaButton
                             variant="tertiary"
-                            color="neutral"
                             @click="
                                 () => {
                                     console.log('wow');
@@ -25,22 +24,22 @@
                 </template>
                 <template #right>
                     <ZiaButtonGroup gap="spaced">
-                        <ZiaButton variant="tertiary" color="neutral">Cart</ZiaButton>
-                        <ZiaButton variant="primary" color="neutral">Sign In</ZiaButton>
+                        <ZiaButton variant="tertiary">Cart</ZiaButton>
+                        <ZiaButton variant="primary">Sign In</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
                 <template #mobile>
                     <ZiaButtonGroup gap="spaced" orientation="vertical">
-                        <ZiaButton variant="tertiary" color="neutral">Products</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">News</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">Blog</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">Contact</ZiaButton>
-                        <ZiaButton variant="tertiary" color="neutral">About Us</ZiaButton>
+                        <ZiaButton variant="tertiary">Products</ZiaButton>
+                        <ZiaButton variant="tertiary">News</ZiaButton>
+                        <ZiaButton variant="tertiary">Blog</ZiaButton>
+                        <ZiaButton variant="tertiary">Contact</ZiaButton>
+                        <ZiaButton variant="tertiary">About Us</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
             </ZiaNavigation>
         </ZiaSection>
-        <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
+        <ZiaSection>
             <h2>Color</h2>
             <table class="palette" style="width: 100%; text-align: center">
                 <tr>
@@ -57,7 +56,7 @@
                     <td style="background-color: var(--color-neutral-9)">9</td>
                     <td style="background-color: var(--color-neutral-10)">10</td>
                 </tr>
-                <tr class="color-palette-primary">
+                <tr>
                     <th>Primary</th>
                     <td style="background-color: var(--color-brand-0)">0</td>
                     <td style="background-color: var(--color-brand-1)">1</td>
@@ -71,7 +70,7 @@
                     <td style="background-color: var(--color-brand-9)">9</td>
                     <td style="background-color: var(--color-brand-10)">10</td>
                 </tr>
-                <tr class="color-palette-success">
+                <tr>
                     <th>Success</th>
                     <td style="background-color: var(--color-success-0)">0</td>
                     <td style="background-color: var(--color-success-1)">1</td>
@@ -85,7 +84,7 @@
                     <td style="background-color: var(--color-success-9)">9</td>
                     <td style="background-color: var(--color-success-10)">10</td>
                 </tr>
-                <tr class="color-palette-danger">
+                <tr>
                     <th>Danger</th>
                     <td style="background-color: var(--color-danger-0)">0</td>
                     <td style="background-color: var(--color-danger-1)">1</td>
@@ -112,14 +111,36 @@
                 >
             </ZiaButtonGroup>
         </ZiaSection>
-        <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
+        <ZiaSection>
             <h1>Buttons</h1>
             <ZiaButtonGroup orientation="horizontal" gap="spaced">
                 <ZiaButton variant="primary" color="neutral">Primary</ZiaButton>
                 <ZiaButton variant="secondary" color="neutral">Secondary</ZiaButton>
                 <ZiaButton variant="tertiary" color="neutral">Tertiary</ZiaButton>
-                <ZiaButton variant="primary" color="neutral">Override</ZiaButton>
+                <ZiaButton variant="primary" color="danger">Override</ZiaButton>
             </ZiaButtonGroup>
+            <br /><br />
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton variant="primary" color="brand">Primary</ZiaButton>
+                <ZiaButton variant="secondary" color="brand">Secondary</ZiaButton>
+                <ZiaButton variant="tertiary" color="brand">Tertiary</ZiaButton>
+                <ZiaButton variant="primary" color="danger">Override</ZiaButton>
+            </ZiaButtonGroup>
+            <br /><br />
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton variant="primary" color="success">Primary</ZiaButton>
+                <ZiaButton variant="secondary" color="success">Secondary</ZiaButton>
+                <ZiaButton variant="tertiary" color="success">Tertiary</ZiaButton>
+                <ZiaButton variant="primary" color="danger">Override</ZiaButton>
+            </ZiaButtonGroup>
+            <br /><br />
+            <ZiaButtonGroup orientation="horizontal" gap="spaced">
+                <ZiaButton variant="primary" color="danger">Primary</ZiaButton>
+                <ZiaButton variant="secondary" color="danger">Secondary</ZiaButton>
+                <ZiaButton variant="tertiary" color="danger">Tertiary</ZiaButton>
+                <ZiaButton variant="primary" color="danger">Override</ZiaButton>
+            </ZiaButtonGroup>
+            <br /><br />
         </ZiaSection>
         <ZiaSection>
             <h1>Popovers</h1>
@@ -283,10 +304,25 @@
             </ZiaPopover>
             <br /><br />
         </ZiaSection>
-        <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
-            <ZiaInput placeholder="Placeholder" style="width: 200px" />
+        <ZiaSection>
+            <h1>Input</h1>
+            <ZiaInput placeholder="Text" style="width: 200px" /><br /><br />
+            <ZiaInput placeholder="Password" type="password" style="width: 200px" /><br /><br />
+            <ZiaInput placeholder="Password" type="password" style="width: 200px">
+                <template #prefix>$</template>
+            </ZiaInput>
+            <br /><br />
+            <ZiaInput type="number" style="width: 200px">
+                <template #suffix>ft</template>
+            </ZiaInput>
+            <br /><br />
+            <ZiaInput type="text" style="width: 200px">
+                <template #prefix>$</template>
+                <template #suffix>.00</template>
+            </ZiaInput>
+            <br /><br />
         </ZiaSection>
-        <ZiaSection :class="[`color-palette-${palette}`, `color-theme-${theme}`]">
+        <ZiaSection>
             <h1>
                 Cras accumsan accumsan est vel sodales. Praesent id odio nec orci accumsan consequat. Mauris nec blandit
                 risus, quis viverra odio.
@@ -364,9 +400,6 @@ useHead({
 });
 
 const scheme = ref("light");
-const palette = ref("neutral");
-const theme = ref("default");
-const colors = useTemplateRef("colors");
 const popoverButton = useTemplateRef("popoverButton");
 const popoverOpen = ref(false);
 const popoverShade = ref(false);
@@ -381,64 +414,6 @@ const popoverPosition = ref<PopoverPosition>({
         minWidth: 200,
     },
 });
-
-onMounted(() => {
-    if (!colors.value) return;
-    calculateContrastRatio();
-    window.addEventListener("click", calculateContrastRatio);
-});
-
-function calculateContrastRatio() {
-    if (!colors.value) return;
-    for (let i = 0; i < colors.value.children.length; i++) {
-        const row = colors.value.children[i]!;
-        const styles = getComputedStyle(row);
-        const regex = /\b\d+(\.\d+)?\b/g;
-
-        const color = styles.color.match(regex);
-        const background = styles.backgroundColor.match(regex);
-        if (!color || color.length < 3) continue;
-        if (!background || background.length < 3) continue;
-
-        const colorR =
-            parseFloat(color[0]) <= 0.03928
-                ? parseFloat(color[0]!) / 12.92
-                : Math.pow((parseFloat(color[0]) + 0.055) / 1.055, 2.4);
-        const colorG =
-            parseFloat(color[1]!) <= 0.03928
-                ? parseFloat(color[1]!) / 12.92
-                : Math.pow((parseFloat(color[1]!) + 0.055) / 1.055, 2.4);
-        const colorB =
-            parseFloat(color[2]!) <= 0.03928
-                ? parseFloat(color[2]!) / 12.92
-                : Math.pow((parseFloat(color[2]!) + 0.055) / 1.055, 2.4);
-
-        const colorL = 0.2126 * colorR + 0.7152 * colorG + 0.0722 * colorB;
-
-        const backgroundR =
-            parseFloat(background[0]) <= 0.03928
-                ? parseFloat(background[0]!) / 12.92
-                : Math.pow((parseFloat(background[0]) + 0.055) / 1.055, 2.4);
-        const backgroundG =
-            parseFloat(background[1]!) <= 0.03928
-                ? parseFloat(background[1]!) / 12.92
-                : Math.pow((parseFloat(background[1]!) + 0.055) / 1.055, 2.4);
-        const backgroundB =
-            parseFloat(background[2]!) <= 0.03928
-                ? parseFloat(background[2]!) / 12.92
-                : Math.pow((parseFloat(background[2]!) + 0.055) / 1.055, 2.4);
-
-        const backgroundL = 0.2126 * backgroundR + 0.7152 * backgroundG + 0.0722 * backgroundB;
-
-        const contrastRatio =
-            colorL >= backgroundL ? (colorL + 0.05) / (backgroundL + 0.05) : (backgroundL + 0.05) / (colorL + 0.05);
-
-        let status = contrastRatio >= 3 ? "✅" : "❌";
-        status += contrastRatio >= 4.5 ? "✅" : "❌";
-
-        row.children[2]!.innerHTML = status + " " + contrastRatio.toFixed(3);
-    }
-}
 </script>
 
 <style lang="css">

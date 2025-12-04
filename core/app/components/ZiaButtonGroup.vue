@@ -15,7 +15,7 @@ const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
 
 <style lang="css">
 .zia-button-group {
-    --button-group-spaced-margin: 10px;
+    --button-group--column-gap: 10px;
 
     display: flex;
 
@@ -41,7 +41,7 @@ const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
         }
 
         &.gap-spaced {
-            column-gap: var(--button-group-spaced-margin);
+            column-gap: var(--button-group--column-gap);
         }
     }
 
