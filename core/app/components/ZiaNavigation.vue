@@ -12,8 +12,7 @@
             </div>
         </div>
         <div class="items-collapsed">
-            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen">= </ZiaButton
-                > 
+            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen">=</ZiaButton> 
             <ZiaPopover v-model="mobileMenuOpen" :anchor="mobileMenuButton"
                 :position="{ vertical: 'below', horizontal: 'right' }">
                 <slot name="mobile" />
@@ -33,8 +32,6 @@ const mobileMenuOpen = ref(false);
     column-gap: 20px;
     display: flex;
 
-    &>.logo {}
-
     &>.items {
         display: flex;
         flex-grow: 1;
@@ -42,8 +39,6 @@ const mobileMenuOpen = ref(false);
         &>.left {
             flex-grow: 1;
         }
-
-        &>.right {}
     }
 
     &>.items-collapsed {
