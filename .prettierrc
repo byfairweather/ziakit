@@ -1,6 +1,0 @@
-{
-    "tabWidth": 4,
-    "printWidth": 120,
-    "cssDeclarationSorterOrder": "alphabetical",
-    "plugins": ["prettier-plugin-css-order"]
-}

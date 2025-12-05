@@ -5,7 +5,7 @@
     --color-danger-base: hsl(10, 72%, 45%);
 
     --color-shade-step-light: (94 - l) / 5;
-    --color-shade-step-dark: (l - 14) / 5;
+    --color-shade-step-dark: (l - 14) / 5; 
 
     --color-shade-0: h s calc(l - (var(--color-shade-step-dark) * 5));
     --color-shade-1: h s calc(l - (var(--color-shade-step-dark) * 4));

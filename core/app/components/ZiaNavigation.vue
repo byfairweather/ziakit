@@ -12,16 +12,12 @@
             </div>
         </div>
         <div class="items-collapsed">
-            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen"
-                >=</ZiaButton
-            >
-            <ZiaPopover
-                v-model="mobileMenuOpen"
-                :anchor="mobileMenuButton"
-                :position="{ vertical: 'below', horizontal: 'right' }"
-            >
+            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen">= </ZiaButton
+                > 
+            <ZiaPopover v-model="mobileMenuOpen" :anchor="mobileMenuButton"
+                :position="{ vertical: 'below', horizontal: 'right' }">
                 <slot name="mobile" />
-            </ZiaPopover>
+            </ZiaPopover> 
         </div>
     </nav>
 </template>
@@ -37,27 +33,25 @@ const mobileMenuOpen = ref(false);
     column-gap: 20px;
     display: flex;
 
-    & > .logo {
-    }
+    &>.logo {}
 
-    & > .items {
+    &>.items {
         display: flex;
         flex-grow: 1;
 
-        & > .left {
+        &>.left {
             flex-grow: 1;
         }
 
-        & > .right {
-        }
+        &>.right {}
     }
 
-    & > .items-collapsed {
+    &>.items-collapsed {
         display: none;
         flex-grow: 1;
         justify-content: flex-end;
 
-        & > .popover {
+        &>.popover {
             display: none;
         }
     }
@@ -65,11 +59,11 @@ const mobileMenuOpen = ref(false);
 
 @media (max-width: 800px) {
     .zia-navigation {
-        & > .items-collapsed {
+        &>.items-collapsed {
             display: flex;
         }
 
-        & > .items {
+        &>.items {
             display: none;
         }
     }

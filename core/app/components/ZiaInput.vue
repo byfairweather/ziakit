@@ -64,7 +64,7 @@ const hasSuffix = computed(() => {
     display: flex;
     overflow: hidden;
 
-    & > input {
+    &>input {
         background-color: transparent;
         border: none;
         color: inherit;
@@ -74,12 +74,12 @@ const hasSuffix = computed(() => {
         width: 100%;
     }
 
-    & > .prefix {
+    &>.prefix {
         padding: var(--input--padding);
         padding-right: 0;
     }
 
-    & > .suffix {
+    &>.suffix {
         padding: var(--input--padding);
         padding-left: 0;
     }

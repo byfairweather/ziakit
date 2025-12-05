@@ -11,15 +11,11 @@
                         <ZiaButton variant="tertiary">News</ZiaButton>
                         <ZiaButton variant="tertiary">Blog</ZiaButton>
                         <ZiaButton variant="tertiary">Contact</ZiaButton>
-                        <ZiaButton
-                            variant="tertiary"
-                            @click="
-                                () => {
-                                    console.log('wow');
-                                }
-                            "
-                            >About Us</ZiaButton
-                        >
+                        <ZiaButton variant="tertiary" @click="
+                            () => {
+                                console.log('wow');
+                            }
+                        ">About Us</ZiaButton>
                     </ZiaButtonGroup>
                 </template>
                 <template #right>
@@ -103,12 +99,10 @@
         <ZiaSection>
             <h1>Color Mode</h1>
             <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton :variant="scheme == 'dark' ? 'primary' : 'secondary'" @click="scheme = 'dark'"
-                    >Dark</ZiaButton
-                >
-                <ZiaButton :variant="scheme == 'light' ? 'primary' : 'secondary'" @click="scheme = 'light'"
-                    >Light</ZiaButton
-                >
+                <ZiaButton :variant="scheme == 'dark' ? 'primary' : 'secondary'" @click="scheme = 'dark'">Dark
+                </ZiaButton>
+                <ZiaButton :variant="scheme == 'light' ? 'primary' : 'secondary'" @click="scheme = 'light'">Light
+                </ZiaButton>
             </ZiaButtonGroup>
         </ZiaSection>
         <ZiaSection>
@@ -145,161 +139,83 @@
         <ZiaSection>
             <h1>Popovers</h1>
             <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'above' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'above'"
-                    >Above</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'top' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'top'"
-                    >Top</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'center' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'center'"
-                    >Center</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'fill' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'fill'"
-                    >Fill</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'bottom' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'bottom'"
-                    >Bottom</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.vertical == 'below' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.vertical = 'below'"
-                    >Below</ZiaButton
-                >
+                <ZiaButton :variant="popoverPosition.vertical == 'above' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'above'">Above</ZiaButton>
+                <ZiaButton :variant="popoverPosition.vertical == 'top' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'top'">Top</ZiaButton>
+                <ZiaButton :variant="popoverPosition.vertical == 'center' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'center'">Center</ZiaButton>
+                <ZiaButton :variant="popoverPosition.vertical == 'fill' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'fill'">Fill</ZiaButton>
+                <ZiaButton :variant="popoverPosition.vertical == 'bottom' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'bottom'">Bottom</ZiaButton>
+                <ZiaButton :variant="popoverPosition.vertical == 'below' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.vertical = 'below'">Below</ZiaButton>
             </ZiaButtonGroup>
             <ZiaButtonGroup v-if="popoverPosition.fallback" orientation="horizontal">
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'above' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'above'"
-                    >Above</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'top' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'top'"
-                    >Top</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'center' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'center'"
-                    >Center</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'fill' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'fill'"
-                    >Fill</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'bottom' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'bottom'"
-                    >Bottom</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.vertical == 'below' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.vertical = 'below'"
-                    >Below</ZiaButton
-                >
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'above' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'above'">Above</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'top' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'top'">Top</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'center' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'center'">Center</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'fill' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'fill'">Fill</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'bottom' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'bottom'">Bottom</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.vertical == 'below' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.vertical = 'below'">Below</ZiaButton>
             </ZiaButtonGroup>
             <br />
             <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'outside-left' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'outside-left'"
-                    >Outside Left</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'left' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'left'"
-                    >Left</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'center' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'center'"
-                    >Center</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'fill' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'fill'"
-                    >Fill</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'right' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'right'"
-                    >Right</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.horizontal == 'outside-right' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.horizontal = 'outside-right'"
-                    >Outside Right</ZiaButton
-                >
+                <ZiaButton :variant="popoverPosition.horizontal == 'outside-left' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'outside-left'">Outside Left</ZiaButton>
+                <ZiaButton :variant="popoverPosition.horizontal == 'left' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'left'">Left</ZiaButton>
+                <ZiaButton :variant="popoverPosition.horizontal == 'center' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'center'">Center</ZiaButton>
+                <ZiaButton :variant="popoverPosition.horizontal == 'fill' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'fill'">Fill</ZiaButton>
+                <ZiaButton :variant="popoverPosition.horizontal == 'right' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'right'">Right</ZiaButton>
+                <ZiaButton :variant="popoverPosition.horizontal == 'outside-right' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.horizontal = 'outside-right'">Outside Right</ZiaButton>
             </ZiaButtonGroup>
             <ZiaButtonGroup v-if="popoverPosition.fallback" orientation="horizontal">
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'outside-left' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'outside-left'"
-                    >Outside Left</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'left' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'left'"
-                    >Left</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'center' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'center'"
-                    >Center</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'fill' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'fill'"
-                    >Fill</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'right' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'right'"
-                    >Right</ZiaButton
-                >
-                <ZiaButton
-                    :variant="popoverPosition.fallback.horizontal == 'outside-right' ? 'primary' : 'secondary'"
-                    @click="popoverPosition.fallback.horizontal = 'outside-right'"
-                    >Outside Right</ZiaButton
-                >
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'outside-left' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'outside-left'">Outside Left</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'left' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'left'">Left</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'center' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'center'">Center</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'fill' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'fill'">Fill</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'right' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'right'">Right</ZiaButton>
+                <ZiaButton :variant="popoverPosition.fallback.horizontal == 'outside-right' ? 'primary' : 'secondary'"
+                    @click="popoverPosition.fallback.horizontal = 'outside-right'">Outside Right</ZiaButton>
             </ZiaButtonGroup>
             <br /><br />
             <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton :variant="popoverShade == true ? 'primary' : 'secondary'" @click="popoverShade = true"
-                    >Shade</ZiaButton
-                >
-                <ZiaButton :variant="popoverShade == false ? 'primary' : 'secondary'" @click="popoverShade = false"
-                    >No Shade</ZiaButton
-                >
+                <ZiaButton :variant="popoverShade == true ? 'primary' : 'secondary'" @click="popoverShade = true">Shade
+                </ZiaButton>
+                <ZiaButton :variant="popoverShade == false ? 'primary' : 'secondary'" @click="popoverShade = false">No
+                    Shade
+                </ZiaButton>
             </ZiaButtonGroup>
             <br /><br />
             <ZiaButtonGroup orientation="horizontal">
-                <ZiaButton :variant="popoverDismiss == true ? 'primary' : 'secondary'" @click="popoverDismiss = true"
-                    >Light Dismiss</ZiaButton
-                >
-                <ZiaButton :variant="popoverDismiss == false ? 'primary' : 'secondary'" @click="popoverDismiss = false"
-                    >Hard Dismiss</ZiaButton
-                >
+                <ZiaButton :variant="popoverDismiss == true ? 'primary' : 'secondary'" @click="popoverDismiss = true">
+                    Light
+                    Dismiss</ZiaButton>
+                <ZiaButton :variant="popoverDismiss == false ? 'primary' : 'secondary'" @click="popoverDismiss = false">
+                    Hard
+                    Dismiss</ZiaButton>
             </ZiaButtonGroup>
             <br /><br />
             <ZiaButton ref="popoverButton" @click="popoverOpen = !popoverOpen">Toggle Popover</ZiaButton>
-            <ZiaPopover
-                v-model="popoverOpen"
-                :anchor="popoverButton"
-                :shade="popoverShade"
-                :position="popoverPosition"
-                :light-dismiss="popoverDismiss"
-            >
+            <ZiaPopover v-model="popoverOpen" :anchor="popoverButton" :shade="popoverShade" :position="popoverPosition"
+                :light-dismiss="popoverDismiss">
                 <h1>Heading 1</h1>
             </ZiaPopover>
             <br /><br />

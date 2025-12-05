@@ -1,12 +1,7 @@
 <template>
     <Transition>
-        <div
-            v-if="open"
-            ref="popover"
-            class="zia-popover"
-            :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]"
-            :style
-        >
+        <div ref="popover" v-if="open" class="zia-popover"
+            :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]" :style>
             <slot />
         </div>
     </Transition>

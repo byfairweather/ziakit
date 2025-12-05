@@ -32,7 +32,7 @@ const { sticky = false, padding = "md" } = defineProps<Props>();
     justify-content: center;
     overflow-x: scroll;
 
-    & > .content {
+    &>.content {
         width: var(--section-width);
     }
 
