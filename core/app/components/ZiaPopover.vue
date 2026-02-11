@@ -1,43 +1,50 @@
 <template>
     <Transition>
-        <div ref="popover" v-if="open" class="zia-popover"
-            :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]" :style>
+        <div
+            ref="popover"
+            v-if="open"
+            class="zia-popover"
+            :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]"
+            :style
+        >
             <slot />
         </div>
     </Transition>
     <ZiaShade v-if="shade" v-model="open" :light-dismiss />
 </template>
 
-<script setup lang="ts">
-import type { CSSProperties } from "vue";
+<script lang="ts">
+export interface ZiaPopoverProps {
+    anchor?: ComponentPublicInstance | HTMLElement | null;
+    shade?: boolean;
+    lightDismiss?: boolean;
+    position?: ZiaPopoverPosition;
+}
 
-type PopoverVerticalPosition = "above" | "top" | "center" | "fill" | "bottom" | "below";
-type PopoverHorizontalPosition = "outside-left" | "left" | "center" | "fill" | "right" | "outside-right";
-
-export interface PopoverPosition {
-    vertical: PopoverVerticalPosition;
-    horizontal: PopoverHorizontalPosition;
+export interface ZiaPopoverPosition {
+    vertical: ZiaPopoverVerticalPosition;
+    horizontal: ZiaPopoverHorizontalPosition;
     fallback?: {
-        vertical: PopoverVerticalPosition;
-        horizontal: PopoverHorizontalPosition;
+        vertical: ZiaPopoverVerticalPosition;
+        horizontal: ZiaPopoverHorizontalPosition;
         minHeight: number;
         minWidth: number;
     };
 }
 
-interface Props {
-    anchor?: ComponentPublicInstance | HTMLElement | null;
-    shade?: boolean;
-    lightDismiss?: boolean;
-    position?: PopoverPosition;
-}
+type ZiaPopoverVerticalPosition = "above" | "top" | "center" | "fill" | "bottom" | "below";
+type ZiaPopoverHorizontalPosition = "outside-left" | "left" | "center" | "fill" | "right" | "outside-right";
+</script>
+
+<script setup lang="ts">
+import type { CSSProperties } from "vue";
 
 const {
     anchor = null,
     shade = true,
     lightDismiss = true,
     position = { vertical: "below", horizontal: "left" },
-} = defineProps<Props>();
+} = defineProps<ZiaPopoverProps>();
 const open = defineModel<boolean>();
 const popover = useTemplateRef("popover");
 const finalPosition = ref({ ...position });
@@ -51,7 +58,7 @@ const anchorElement = computed(() => {
 watch(() => [open.value, anchor, position], updatePosition, { flush: "post", deep: true });
 
 watchPostEffect(() => {
-    if (open.value == true) {
+    if (open.value === true) {
         anchorElement.value.style.zIndex = "1000";
         anchorElement.value.style.position = "relative";
     } else {
@@ -61,7 +68,7 @@ watchPostEffect(() => {
 });
 
 watchPostEffect(() => {
-    if (lightDismiss == true) {
+    if (lightDismiss === true) {
         window.addEventListener("scroll", close);
         window.addEventListener("resize", close);
     } else {
@@ -71,7 +78,7 @@ watchPostEffect(() => {
 });
 
 onUnmounted(() => {
-    if (lightDismiss == true) {
+    if (lightDismiss === true) {
         window.removeEventListener("scroll", close);
         window.removeEventListener("resize", close);
     } else {
@@ -84,7 +91,7 @@ function close(): void {
     open.value = false;
 }
 
-function calculateMaxHeight(position: PopoverVerticalPosition): number {
+function calculateMaxHeight(position: ZiaPopoverVerticalPosition): number {
     if (!anchor) return 0;
     const anchorRect = anchorElement.value.getBoundingClientRect();
 
@@ -107,7 +114,7 @@ function calculateMaxHeight(position: PopoverVerticalPosition): number {
     }
 }
 
-function calculateMaxWidth(position: PopoverHorizontalPosition): number {
+function calculateMaxWidth(position: ZiaPopoverHorizontalPosition): number {
     if (!anchor) return 0;
     const anchorRect = anchorElement.value.getBoundingClientRect();
 

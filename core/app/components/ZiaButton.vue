@@ -4,13 +4,15 @@
     </button>
 </template>
 
-<script setup lang="ts">
-interface Props {
+<script lang="ts">
+export interface ZiaButtonProps {
     variant?: "primary" | "secondary" | "tertiary";
     color?: "neutral" | "brand" | "success" | "danger";
 }
+</script>
 
-const { variant = "primary", color = "neutral" } = defineProps<Props>();
+<script setup lang="ts">
+const { variant = "primary", color = "neutral" } = defineProps<ZiaButtonProps>();
 </script>
 
 <style lang="css">

@@ -4,13 +4,15 @@
     </div>
 </template>
 
-<script setup lang="ts">
-interface Props {
+<script lang="ts">
+export interface ZiaButtonGroupProps {
     orientation?: "horizontal" | "vertical";
     gap?: "collapsed" | "spaced" | "none";
 }
+</script>
 
-const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
+<script setup lang="ts">
+const { orientation = "horizontal", gap = "collapsed" } = defineProps<ZiaButtonGroupProps>();
 </script>
 
 <style lang="css">
@@ -23,17 +25,17 @@ const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
         flex-direction: row;
 
         &.gap-collapsed {
-            &>.zia-button:first-child {
+            & > .zia-button:first-child {
                 border-bottom-right-radius: 0;
                 border-top-right-radius: 0;
             }
 
-            &>.zia-button:not(:first-child) {
+            & > .zia-button:not(:first-child) {
                 border-bottom-left-radius: 0;
                 border-top-left-radius: 0;
             }
 
-            &>.zia-button:not(:last-child) {
+            & > .zia-button:not(:last-child) {
                 border-bottom-right-radius: 0;
                 border-top-right-radius: 0;
                 margin-right: calc(var(--button--border-width) * -1);
@@ -50,17 +52,17 @@ const { orientation = "horizontal", gap = "collapsed" } = defineProps<Props>();
         height: 200px;
 
         &.gap-collapsed {
-            &>.zia-button:first-child {
+            & > .zia-button:first-child {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
             }
 
-            &>.zia-button:not(:first-child) {
+            & > .zia-button:not(:first-child) {
                 border-top-left-radius: 0;
                 border-top-right-radius: 0;
             }
 
-            &>.zia-button:not(:last-child) {
+            & > .zia-button:not(:last-child) {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 margin-bottom: calc(var(--button-border-width) * -1);

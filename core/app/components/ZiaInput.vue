@@ -1,34 +1,44 @@
 <template>
-    <div class="zia-input" :class="{ error: !!error }">
+    <div class="zia-input">
         <div v-if="hasPrefix" class="prefix">
+            {{ prefix }}
             <slot name="prefix" />
         </div>
-        <input v-model="value" :placeholder :type />
+        <input :id="formField?.id" v-model="model" :placeholder :type />
         <div v-if="hasSuffix" class="suffix">
+            {{ suffix }}
             <slot name="suffix" />
         </div>
     </div>
 </template>
 
-<script setup lang="ts">
-interface Props {
-    type?: "text" | "password" | "number";
+<script lang="ts">
+export interface ZiaInputProps {
+    type?: ZiaInputType;
     placeholder?: string;
+    prefix?: string;
+    suffix?: string;
 }
 
-const { type = "text", placeholder = "" } = defineProps<Props>();
+export type ZiaInputType = "text" | "password" | "number";
+</script>
 
-const value = defineModel<string>();
-const error = ref<string>();
+<script setup lang="ts">
+import { ZiaFormFieldInjectionKey } from "./ZiaFormField.vue";
+
+const { type = "text", placeholder, prefix, suffix } = defineProps<ZiaInputProps>();
+
+const formField = inject(ZiaFormFieldInjectionKey);
+const model = defineModel<string>();
 
 const hasPrefix = computed(() => {
     const slots = useSlots();
-    return !!slots.prefix;
+    return !!slots.prefix || !!prefix;
 });
 
 const hasSuffix = computed(() => {
     const slots = useSlots();
-    return !!slots.suffix;
+    return !!slots.suffix || !!suffix;
 });
 </script>
 
@@ -64,7 +74,7 @@ const hasSuffix = computed(() => {
     display: flex;
     overflow: hidden;
 
-    &>input {
+    & > input {
         background-color: transparent;
         border: none;
         color: inherit;
@@ -74,12 +84,12 @@ const hasSuffix = computed(() => {
         width: 100%;
     }
 
-    &>.prefix {
+    & > .prefix {
         padding: var(--input--padding);
         padding-right: 0;
     }
 
-    &>.suffix {
+    & > .suffix {
         padding: var(--input--padding);
         padding-left: 0;
     }

@@ -6,13 +6,15 @@
     </div>
 </template>
 
-<script setup lang="ts">
-interface Props {
+<script lang="ts">
+export interface ZiaSectionProps {
     sticky?: boolean;
     padding?: "xl" | "lg" | "md" | "sm" | "xs" | "none";
 }
+</script>
 
-const { sticky = false, padding = "md" } = defineProps<Props>();
+<script setup lang="ts">
+const { sticky = false, padding = "md" } = defineProps<ZiaSectionProps>();
 </script>
 
 <style lang="css">
@@ -32,7 +34,7 @@ const { sticky = false, padding = "md" } = defineProps<Props>();
     justify-content: center;
     overflow-x: scroll;
 
-    &>.content {
+    & > .content {
         width: var(--section-width);
     }
 

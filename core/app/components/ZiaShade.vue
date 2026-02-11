@@ -6,13 +6,15 @@
     </Transition>
 </template>
 
-<script setup lang="ts">
-const open = defineModel<boolean>();
-interface Props {
+<script lang="ts">
+export interface ZiaShadeProps {
     lightDismiss?: boolean;
 }
+</script>
 
-const { lightDismiss = true } = defineProps<Props>();
+<script setup lang="ts">
+const { lightDismiss = true } = defineProps<ZiaShadeProps>();
+const open = defineModel<boolean>();
 
 function dismiss() {
     if (lightDismiss) {
