@@ -61,7 +61,7 @@ const mobileMenuOpen = ref(false);
 }
 
 @media (max-width: 800px) {
-    .navigation.menu-mobile {
+    .navigation.mobile-menu {
         & > .menu-mobile {
             display: flex;
         }
