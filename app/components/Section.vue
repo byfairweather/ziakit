@@ -39,8 +39,7 @@ const { sticky = false, padding = "md" } = defineProps<SectionProps>();
     }
 
     &.sticky {
-        background-color: color-mix(in srgb, var(--section-background-color) 80%, transparent 20%);
-        backdrop-filter: blur(10px);
+        background-color: var(--section-background-color);
         border-bottom: 1px solid light-dark(var(--colors--neutral-10), var(--colors--neutral-0));
         position: sticky;
         top: 0;

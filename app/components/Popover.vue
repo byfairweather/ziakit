@@ -2,7 +2,7 @@
     <Transition @before-enter="liftAnchor" @after-leave="dropAnchor">
         <div class="popover" v-if="open">
             <div
-                class="popover"
+                class="content"
                 ref="popover"
                 :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]"
                 :style
@@ -243,7 +243,7 @@ function updatePosition() {
     --popover--gap: 10px;
     --popover--scale: 0.98;
 
-    & > .popover {
+    & > .content {
         background-color: var(--popover--background-color);
         border: var(--popover--border);
         border-radius: var(--popover--border-radius);
@@ -288,7 +288,7 @@ function updatePosition() {
 
     &.v-enter-active,
     &.v-leave-active {
-        & > .popover {
+        & > .content {
             transition: var(--transitions--default);
             transition-property: margin, opacity, transform;
         }
@@ -300,7 +300,7 @@ function updatePosition() {
 
     &.v-enter-from,
     &.v-leave-to {
-        & > .popover {
+        & > .content {
             margin: 0;
             opacity: 0;
             transform: scale(var(--popover--scale));

@@ -1,5 +1,5 @@
 <template>
-    <nav class="navigation" :class="{ 'mobile-menu': mobileMenu }">
+    <nav class="navigation">
         <div class="logo">
             <slot name="logo" />
         </div>
@@ -11,27 +11,29 @@
                 <slot name="right" />
             </div>
         </div>
-        <div class="menu-mobile">
-            <Button ref="mobile-menu-toggle" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen"> = </Button>
+        <div class="mobile-menu">
+            <slot name="mobile" />
+            <Button
+                class="toggle"
+                ref="mobile-menu-toggle"
+                variant="tertiary"
+                @click="mobileMenuOpen = !mobileMenuOpen"
+            >
+                =
+            </Button>
+
             <Popover
                 v-model="mobileMenuOpen"
                 :anchor="mobileMenuToggle"
                 :position="{ vertical: 'below', horizontal: 'right' }"
             >
-                <slot name="mobile" />
+                <slot name="mobile-popover" />
             </Popover>
         </div>
     </nav>
 </template>
 
-<script lang="ts">
-export interface NavigationProps {
-    mobileMenu?: boolean;
-}
-</script>
-
 <script setup lang="ts">
-const { mobileMenu = true } = defineProps<NavigationProps>();
 const mobileMenuToggle = useTemplateRef("mobile-menu-toggle");
 const mobileMenuOpen = ref(false);
 </script>
@@ -53,16 +55,18 @@ const mobileMenuOpen = ref(false);
         }
     }
 
-    & > .menu-mobile {
+    & > .mobile-menu {
         display: none;
         flex-grow: 1;
         justify-content: flex-end;
-    }
-}
 
-@media (max-width: 800px) {
-    .navigation.mobile-menu {
-        & > .menu-mobile {
+        & > .toggle {
+            margin-left: 12px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        & > .mobile-menu {
             display: flex;
         }
 

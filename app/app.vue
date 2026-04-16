@@ -21,6 +21,9 @@
                     </ButtonGroup>
                 </template>
                 <template #mobile>
+                    <Button variant="primary">Sign In</Button>
+                </template>
+                <template #mobile-popover>
                     <ButtonGroup gap="spaced" orientation="vertical">
                         <Button variant="tertiary">Products</Button>
                         <Button variant="tertiary">News</Button>
