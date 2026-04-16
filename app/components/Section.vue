@@ -1,5 +1,5 @@
 <template>
-    <div class="zia-section" :class="[sticky && `sticky`, `padding-${padding}`]">
+    <div class="section" :class="[sticky && `sticky`, `padding-${padding}`]">
         <div class="content">
             <slot />
         </div>
@@ -7,20 +7,20 @@
 </template>
 
 <script lang="ts">
-export interface ZiaSectionProps {
+export interface SectionProps {
     sticky?: boolean;
     padding?: "xl" | "lg" | "md" | "sm" | "xs" | "none";
 }
 </script>
 
 <script setup lang="ts">
-const { sticky = false, padding = "md" } = defineProps<ZiaSectionProps>();
+const { sticky = false, padding = "md" } = defineProps<SectionProps>();
 </script>
 
 <style lang="css">
-.zia-section {
-    --section-background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --section-color: light-dark(var(--color-neutral-black), var(--color-neutral-white));
+.section {
+    --section-background-color: light-dark(var(--colors--neutral-white), var(--colors--neutral-black));
+    --section-color: light-dark(var(--colors--neutral-black), var(--colors--neutral-white));
     --section-padding-xs: 10px;
     --section-padding-sm: 15px;
     --section-padding-md: 20px;
@@ -39,7 +39,9 @@ const { sticky = false, padding = "md" } = defineProps<ZiaSectionProps>();
     }
 
     &.sticky {
-        border-bottom: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
+        background-color: color-mix(in srgb, var(--section-background-color) 80%, transparent 20%);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid light-dark(var(--colors--neutral-10), var(--colors--neutral-0));
         position: sticky;
         top: 0;
         z-index: 10;

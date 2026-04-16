@@ -1,6 +1,6 @@
-# Nuxt Minimal Starter
+# Ziakit
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+UI Library for Nuxt
 
 ## Setup
 
@@ -31,3 +31,5 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

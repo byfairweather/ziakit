@@ -1,0 +1,92 @@
+:root {
+    --colors--neutral-base: hsl(0, 0%, 47%);
+    --colors--brand-base: hsl(200, 73%, 47%);
+    --colors--success-base: hsl(84, 56%, 42%);
+    --colors--warning-base: hsl(36, 83%, 40%);
+    --colors--danger-base: hsl(7, 72%, 45%);
+
+    --colors--shade-step-light: (94 - l) / 5;
+    --colors--shade-step-dark: (l - 14) / 5;
+
+    --colors--shade-0: h s calc(l - (var(--colors--shade-step-dark) * 5));
+    --colors--shade-1: h s calc(l - (var(--colors--shade-step-dark) * 4));
+    --colors--shade-2: h s calc(l - (var(--colors--shade-step-dark) * 3));
+    --colors--shade-3: h s calc(l - (var(--colors--shade-step-dark) * 2));
+    --colors--shade-4: h s calc(l - (var(--colors--shade-step-dark) * 1));
+    --colors--shade-5: h s l;
+    --colors--shade-6: h s calc(l + (var(--colors--shade-step-light) * 1));
+    --colors--shade-7: h s calc(l + (var(--colors--shade-step-light) * 2));
+    --colors--shade-8: h s calc(l + (var(--colors--shade-step-light) * 3));
+    --colors--shade-9: h s calc(l + (var(--colors--shade-step-light) * 4));
+    --colors--shade-10: h s calc(l + (var(--colors--shade-step-light) * 5));
+
+    --colors--neutral-white: hsl(from var(--colors--neutral-base) h s 100%);
+    --colors--neutral-0: hsl(from var(--colors--neutral-base) var(--colors--shade-0));
+    --colors--neutral-1: hsl(from var(--colors--neutral-base) var(--colors--shade-1));
+    --colors--neutral-2: hsl(from var(--colors--neutral-base) var(--colors--shade-2));
+    --colors--neutral-3: hsl(from var(--colors--neutral-base) var(--colors--shade-3));
+    --colors--neutral-4: hsl(from var(--colors--neutral-base) var(--colors--shade-4));
+    --colors--neutral-5: hsl(from var(--colors--neutral-base) var(--colors--shade-5));
+    --colors--neutral-6: hsl(from var(--colors--neutral-base) var(--colors--shade-6));
+    --colors--neutral-7: hsl(from var(--colors--neutral-base) var(--colors--shade-7));
+    --colors--neutral-8: hsl(from var(--colors--neutral-base) var(--colors--shade-8));
+    --colors--neutral-9: hsl(from var(--colors--neutral-base) var(--colors--shade-9));
+    --colors--neutral-10: hsl(from var(--colors--neutral-base) var(--colors--shade-10));
+    --colors--neutral-black: hsl(from var(--colors--neutral-base) h s 8%);
+
+    --colors--brand-0: hsl(from var(--colors--brand-base) var(--colors--shade-0));
+    --colors--brand-1: hsl(from var(--colors--brand-base) var(--colors--shade-1));
+    --colors--brand-2: hsl(from var(--colors--brand-base) var(--colors--shade-2));
+    --colors--brand-3: hsl(from var(--colors--brand-base) var(--colors--shade-3));
+    --colors--brand-4: hsl(from var(--colors--brand-base) var(--colors--shade-4));
+    --colors--brand-5: hsl(from var(--colors--brand-base) var(--colors--shade-5));
+    --colors--brand-6: hsl(from var(--colors--brand-base) var(--colors--shade-6));
+    --colors--brand-7: hsl(from var(--colors--brand-base) var(--colors--shade-7));
+    --colors--brand-8: hsl(from var(--colors--brand-base) var(--colors--shade-8));
+    --colors--brand-9: hsl(from var(--colors--brand-base) var(--colors--shade-9));
+    --colors--brand-10: hsl(from var(--colors--brand-base) var(--colors--shade-10));
+
+    --colors--success-0: hsl(from var(--colors--success-base) var(--colors--shade-0));
+    --colors--success-1: hsl(from var(--colors--success-base) var(--colors--shade-1));
+    --colors--success-2: hsl(from var(--colors--success-base) var(--colors--shade-2));
+    --colors--success-3: hsl(from var(--colors--success-base) var(--colors--shade-3));
+    --colors--success-4: hsl(from var(--colors--success-base) var(--colors--shade-4));
+    --colors--success-5: hsl(from var(--colors--success-base) var(--colors--shade-5));
+    --colors--success-6: hsl(from var(--colors--success-base) var(--colors--shade-6));
+    --colors--success-7: hsl(from var(--colors--success-base) var(--colors--shade-7));
+    --colors--success-8: hsl(from var(--colors--success-base) var(--colors--shade-8));
+    --colors--success-9: hsl(from var(--colors--success-base) var(--colors--shade-9));
+    --colors--success-10: hsl(from var(--colors--success-base) var(--colors--shade-10));
+
+    --colors--warning-0: hsl(from var(--colors--warning-base) var(--colors--shade-0));
+    --colors--warning-1: hsl(from var(--colors--warning-base) var(--colors--shade-1));
+    --colors--warning-2: hsl(from var(--colors--warning-base) var(--colors--shade-2));
+    --colors--warning-3: hsl(from var(--colors--warning-base) var(--colors--shade-3));
+    --colors--warning-4: hsl(from var(--colors--warning-base) var(--colors--shade-4));
+    --colors--warning-5: hsl(from var(--colors--warning-base) var(--colors--shade-5));
+    --colors--warning-6: hsl(from var(--colors--warning-base) var(--colors--shade-6));
+    --colors--warning-7: hsl(from var(--colors--warning-base) var(--colors--shade-7));
+    --colors--warning-8: hsl(from var(--colors--warning-base) var(--colors--shade-8));
+    --colors--warning-9: hsl(from var(--colors--warning-base) var(--colors--shade-9));
+    --colors--warning-10: hsl(from var(--colors--warning-base) var(--colors--shade-10));
+
+    --colors--danger-0: hsl(from var(--colors--danger-base) var(--colors--shade-0));
+    --colors--danger-1: hsl(from var(--colors--danger-base) var(--colors--shade-1));
+    --colors--danger-2: hsl(from var(--colors--danger-base) var(--colors--shade-2));
+    --colors--danger-3: hsl(from var(--colors--danger-base) var(--colors--shade-3));
+    --colors--danger-4: hsl(from var(--colors--danger-base) var(--colors--shade-4));
+    --colors--danger-5: hsl(from var(--colors--danger-base) var(--colors--shade-5));
+    --colors--danger-6: hsl(from var(--colors--danger-base) var(--colors--shade-6));
+    --colors--danger-7: hsl(from var(--colors--danger-base) var(--colors--shade-7));
+    --colors--danger-8: hsl(from var(--colors--danger-base) var(--colors--shade-8));
+    --colors--danger-9: hsl(from var(--colors--danger-base) var(--colors--shade-9));
+    --colors--danger-10: hsl(from var(--colors--danger-base) var(--colors--shade-10));
+}
+
+.color-mode-dark {
+    color-scheme: dark;
+}
+
+.color-mode-light {
+    color-scheme: light;
+}

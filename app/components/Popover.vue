@@ -1,39 +1,45 @@
 <template>
-    <Transition>
-        <div
-            ref="popover"
-            v-if="open"
-            class="zia-popover"
-            :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]"
-            :style
-        >
-            <slot />
+    <Transition @before-enter="liftAnchor" @after-leave="dropAnchor">
+        <div class="popover" v-if="open">
+            <div
+                class="popover"
+                ref="popover"
+                :class="[`vertical-${finalPosition.vertical}`, `horizontal-${finalPosition.horizontal}`]"
+                :style
+            >
+                <slot />
+            </div>
+            <div class="backdrop" :class="{ shade, blur }" @click="lightDismiss">
+                <div v-if="dismiss == 'manual'">
+                    <Button variant="tertiary" @click="manualDismiss">X</Button>
+                </div>
+            </div>
         </div>
     </Transition>
-    <ZiaShade v-if="shade" v-model="open" :light-dismiss />
 </template>
 
 <script lang="ts">
-export interface ZiaPopoverProps {
+export interface PopoverProps {
     anchor?: ComponentPublicInstance | HTMLElement | null;
     shade?: boolean;
-    lightDismiss?: boolean;
-    position?: ZiaPopoverPosition;
+    blur?: boolean;
+    dismiss?: "light" | "manual" | "none";
+    position?: PopoverPosition;
 }
 
-export interface ZiaPopoverPosition {
-    vertical: ZiaPopoverVerticalPosition;
-    horizontal: ZiaPopoverHorizontalPosition;
+export interface PopoverPosition {
+    vertical: PopoverVerticalPosition;
+    horizontal: PopoverHorizontalPosition;
     fallback?: {
-        vertical: ZiaPopoverVerticalPosition;
-        horizontal: ZiaPopoverHorizontalPosition;
+        vertical: PopoverVerticalPosition;
+        horizontal: PopoverHorizontalPosition;
         minHeight: number;
         minWidth: number;
     };
 }
 
-type ZiaPopoverVerticalPosition = "above" | "top" | "center" | "fill" | "bottom" | "below";
-type ZiaPopoverHorizontalPosition = "outside-left" | "left" | "center" | "fill" | "right" | "outside-right";
+type PopoverVerticalPosition = "above" | "top" | "center" | "fill" | "bottom" | "below";
+type PopoverHorizontalPosition = "outside-left" | "left" | "center" | "fill" | "right" | "outside-right";
 </script>
 
 <script setup lang="ts">
@@ -42,9 +48,11 @@ import type { CSSProperties } from "vue";
 const {
     anchor = null,
     shade = true,
-    lightDismiss = true,
+    blur = true,
     position = { vertical: "below", horizontal: "left" },
-} = defineProps<ZiaPopoverProps>();
+    dismiss = "light",
+} = defineProps<PopoverProps>();
+
 const open = defineModel<boolean>();
 const popover = useTemplateRef("popover");
 const finalPosition = ref({ ...position });
@@ -57,18 +65,29 @@ const anchorElement = computed(() => {
 
 watch(() => [open.value, anchor, position], updatePosition, { flush: "post", deep: true });
 
-watchPostEffect(() => {
-    if (open.value === true) {
-        anchorElement.value.style.zIndex = "1000";
-        anchorElement.value.style.position = "relative";
-    } else {
-        anchorElement.value.style.zIndex = "";
-        anchorElement.value.style.position = "";
+function liftAnchor() {
+    anchorElement.value.style.zIndex = "1000";
+    anchorElement.value.style.position = "relative";
+}
+function dropAnchor() {
+    anchorElement.value.style.zIndex = "";
+    anchorElement.value.style.position = "";
+}
+
+function lightDismiss() {
+    if (dismiss == "light") {
+        open.value = false;
     }
-});
+}
+
+function manualDismiss() {
+    if (dismiss == "manual") {
+        open.value = false;
+    }
+}
 
 watchPostEffect(() => {
-    if (lightDismiss === true) {
+    if (dismiss === "light") {
         window.addEventListener("scroll", close);
         window.addEventListener("resize", close);
     } else {
@@ -78,7 +97,7 @@ watchPostEffect(() => {
 });
 
 onUnmounted(() => {
-    if (lightDismiss === true) {
+    if (dismiss === "light") {
         window.removeEventListener("scroll", close);
         window.removeEventListener("resize", close);
     } else {
@@ -91,7 +110,7 @@ function close(): void {
     open.value = false;
 }
 
-function calculateMaxHeight(position: ZiaPopoverVerticalPosition): number {
+function calculateMaxHeight(position: PopoverVerticalPosition): number {
     if (!anchor) return 0;
     const anchorRect = anchorElement.value.getBoundingClientRect();
 
@@ -114,7 +133,7 @@ function calculateMaxHeight(position: ZiaPopoverVerticalPosition): number {
     }
 }
 
-function calculateMaxWidth(position: ZiaPopoverHorizontalPosition): number {
+function calculateMaxWidth(position: PopoverHorizontalPosition): number {
     if (!anchor) return 0;
     const anchorRect = anchorElement.value.getBoundingClientRect();
 
@@ -216,58 +235,80 @@ function updatePosition() {
 </script>
 
 <style lang="css">
-.zia-popover {
-    --popover--background-color: light-dark(var(--color-neutral-white), var(--color-neutral-black));
-    --popover--border: 1px solid light-dark(var(--color-neutral-10), var(--color-neutral-0));
-    --popover--border-radius: var(--forms-control-border-radius);
+.popover {
+    --popover--background-color: light-dark(var(--colors--neutral-white), var(--colors--neutral-black));
+    --popover--border: 1px solid light-dark(var(--colors--neutral-10), var(--colors--neutral-0));
+    --popover--border-radius: var(--forms--border-radius);
     --popover--padding: 12px;
     --popover--gap: 10px;
     --popover--scale: 0.98;
 
-    background-color: var(--popover--background-color);
-    border: var(--popover--border);
-    border-radius: var(--popover--border-radius);
-    overflow: scroll;
-    padding: var(--popover--padding);
-    position: fixed;
-    z-index: 1000;
+    & > .popover {
+        background-color: var(--popover--background-color);
+        border: var(--popover--border);
+        border-radius: var(--popover--border-radius);
+        overflow: scroll;
+        padding: var(--popover--padding);
+        position: fixed;
+        z-index: 1000;
 
-    &.vertical-above {
-        margin-bottom: var(--popover--gap);
+        &.vertical-above {
+            margin-bottom: var(--popover--gap);
+        }
+
+        &.vertical-below {
+            margin-top: var(--popover--gap);
+        }
+
+        &.horizontal-outside-left {
+            margin-right: var(--popover--gap);
+        }
+
+        &.horizontal-outside-right {
+            margin-left: var(--popover--gap);
+        }
     }
 
-    &.vertical-below {
-        margin-top: var(--popover--gap);
-    }
+    & > .backdrop {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 100;
 
-    &.horizontal-outside-left {
-        margin-right: var(--popover--gap);
-    }
+        &.shade {
+            background-color: rgba(0, 0, 0, 0.25);
+        }
 
-    &.horizontal-outside-right {
-        margin-left: var(--popover--gap);
+        &.blur {
+            backdrop-filter: blur(3px);
+        }
     }
 
     &.v-enter-active,
     &.v-leave-active {
-        transition:
-            margin 300ms ease,
-            opacity 160ms ease,
-            transform 300ms ease;
+        & > .popover {
+            transition: var(--transitions--default);
+            transition-property: margin, opacity, transform;
+        }
+
+        & > .backdrop {
+            transition: var(--transitions--default);
+        }
     }
 
     &.v-enter-from,
     &.v-leave-to {
-        margin: 0;
-        opacity: 0;
-
-        &.vertical-top,
-        &.vertical-bottom,
-        &.vertical-center,
-        &.horizontal-left,
-        &.horizontal-right,
-        &.horizontal-center {
+        & > .popover {
+            margin: 0;
+            opacity: 0;
             transform: scale(var(--popover--scale));
+        }
+
+        & > .backdrop {
+            backdrop-filter: blur(0);
+            background-color: rgba(0, 0, 0, 0);
         }
     }
 }

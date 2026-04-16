@@ -1,9 +1,9 @@
 <template>
-    <nav class="zia-navigation">
+    <nav class="navigation" :class="{ 'mobile-menu': mobileMenu }">
         <div class="logo">
             <slot name="logo" />
         </div>
-        <div class="items">
+        <div class="menu">
             <div class="left">
                 <slot name="left" />
             </div>
@@ -11,33 +11,40 @@
                 <slot name="right" />
             </div>
         </div>
-        <div class="items-collapsed">
-            <ZiaButton ref="mobile-menu-button" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen"
-                >=</ZiaButton
-            >
-            <ZiaPopover
+        <div class="menu-mobile">
+            <Button ref="mobile-menu-toggle" variant="tertiary" @click="mobileMenuOpen = !mobileMenuOpen"> = </Button>
+            <Popover
                 v-model="mobileMenuOpen"
-                :anchor="mobileMenuButton"
+                :anchor="mobileMenuToggle"
                 :position="{ vertical: 'below', horizontal: 'right' }"
             >
                 <slot name="mobile" />
-            </ZiaPopover>
+            </Popover>
         </div>
     </nav>
 </template>
 
+<script lang="ts">
+export interface NavigationProps {
+    mobileMenu?: boolean;
+}
+</script>
+
 <script setup lang="ts">
-const mobileMenuButton = useTemplateRef("mobile-menu-button");
+const { mobileMenu = true } = defineProps<NavigationProps>();
+const mobileMenuToggle = useTemplateRef("mobile-menu-toggle");
 const mobileMenuOpen = ref(false);
 </script>
 
 <style lang="css">
-.zia-navigation {
+.navigation {
+    --gap: 20px;
+
     align-items: center;
-    column-gap: 20px;
+    column-gap: var(--gap);
     display: flex;
 
-    & > .items {
+    & > .menu {
         display: flex;
         flex-grow: 1;
 
@@ -46,24 +53,20 @@ const mobileMenuOpen = ref(false);
         }
     }
 
-    & > .items-collapsed {
+    & > .menu-mobile {
         display: none;
         flex-grow: 1;
         justify-content: flex-end;
-
-        & > .popover {
-            display: none;
-        }
     }
 }
 
 @media (max-width: 800px) {
-    .zia-navigation {
-        & > .items-collapsed {
+    .navigation.menu-mobile {
+        & > .menu-mobile {
             display: flex;
         }
 
-        & > .items {
+        & > .menu {
             display: none;
         }
     }

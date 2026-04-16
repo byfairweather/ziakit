@@ -1,5 +1,5 @@
 <template>
-    <form class="zia-form" @blur="submit" @change="submit" @input="submit">
+    <form class="form" @blur="submit" @change="submit" @input="submit">
         <slot />
     </form>
 </template>
@@ -7,25 +7,25 @@
 <script lang="ts">
 import { validate, type ValidationIssues, type ValidationSchema } from "../utils/validation/validator";
 
-export interface ZiaFormProps<T> {
+export interface FormProps<T> {
     schema?: ValidationSchema<T>;
-    labelLayout?: ZiaFormLabelLayout;
+    labelLayout?: FormLabelLayout;
 }
 
-export interface ZiaFormInjection {
-    labelLayout?: ZiaFormLabelLayout;
+export interface FormInjection {
+    labelLayout?: FormLabelLayout;
 }
 
-export type ZiaFormLabelLayout = "vertical" | "horizontal";
-export const ZiaFormInjectionKey = Symbol() as InjectionKey<ZiaFormInjection>;
+export type FormLabelLayout = "vertical" | "horizontal";
+export const FormInjectionKey = Symbol() as InjectionKey<FormInjection>;
 </script>
 
 <script setup lang="ts" generic="T">
-const { schema, labelLayout } = defineProps<ZiaFormProps<T>>();
+const { schema, labelLayout } = defineProps<FormProps<T>>();
 const model = defineModel<T>();
 const issues = defineModel<ValidationIssues<T>>("issues");
 
-provide(ZiaFormInjectionKey, { labelLayout });
+provide(FormInjectionKey, { labelLayout });
 
 function submit() {
     if (!schema) return;
@@ -35,7 +35,7 @@ function submit() {
 </script>
 
 <style lang="css">
-.zia-form {
+.form {
     background-color: transparent;
 }
 </style>

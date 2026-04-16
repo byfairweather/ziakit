@@ -1,25 +1,22 @@
 {
     "name": "ziakit",
-    "version": "0.1.0",
+    "private": true,
     "type": "module",
-    "main": "core/nuxt.config.ts",
     "scripts": {
-        "build": "nuxt build docs",
-        "dev": "nuxt dev -o docs",
-        "generate": "nuxt generate docs",
-        "preview": "nuxt preview docs",
-        "postinstall": "nuxt prepare docs",
+        "dev": "nuxt dev -o",
+        "format": "oxfmt",
         "lint": "oxlint",
-        "lint:fix": "oxlint --fix",
-        "format": "oxfmt"
+        "build": "nuxt build",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
     },
     "dependencies": {
-        "nuxt": "^4.3.0",
-        "vue": "^3.5.27",
-        "vue-router": "^4.6.4"
+        "nuxt": "^4.4.2"
     },
     "devDependencies": {
-        "oxfmt": "^0.31.0",
-        "oxlint": "^1.46.0"
+        "@types/node": "^25.6.0",
+        "oxfmt": "^0.45.0",
+        "oxlint": "^1.60.0"
     }
 }
